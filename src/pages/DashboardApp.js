@@ -92,7 +92,7 @@ export default function DashboardApp() {
               Explore Categories
             </Typography>
           </Grid>
-          <Grid item xs={12} md={2} sm={7} container>
+          <Grid item xs={12} md={2} sm={6} container>
             <Typography variant="h5" sx={{ mb: 1 }}>
               Trending Player
             </Typography>
@@ -127,15 +127,35 @@ export default function DashboardApp() {
                 Live Matches
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
+            {/* LiveMatches */}
+            <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
               <AppLiveMatch />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
+            <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
+              <AppLiveMatch />
+            </Grid>
+              {/* Past Matches */}
+            <Grid item xs={12} sm={12} md={12} justifyContent={"center"} >
               <Typography variant="h5" sx={{ mb: 1 }}>
                 Past Matches
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
+            <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
               <AppLiveMatch />
             </Grid>
               <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
@@ -143,7 +163,16 @@ export default function DashboardApp() {
                Top Bases
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
+              <AppLiveMatch />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
               <AppLiveMatch />
             </Grid>
           </Grid>
