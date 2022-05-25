@@ -87,12 +87,12 @@ export default function DashboardApp() {
         </Typography>
 
         <Grid container spacing={1} justifyContent={"space-between"} >
-          <Grid item xs={8} sm={5} md={8}>
+          <Grid item xs={12} sm={5} md={8}>
             <Typography variant="h5" sx={{ mb: 1 }}>
               Explore Categories
             </Typography>
           </Grid>
-          <Grid item xs={3} md={3} sm={12} container>
+          <Grid item xs={12} md={2} sm={7} container>
             <Typography variant="h5" sx={{ mb: 1 }}>
               Trending Player
             </Typography>

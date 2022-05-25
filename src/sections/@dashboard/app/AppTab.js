@@ -59,8 +59,8 @@ export default function AppTab({ListItems,index,handleChange,ListTag}) {
       </Box>
       {ListTag.map((e,index)=>(
       <TabPanel value={value} index={index}>       
-      <Container>
-         <Grid container>
+      <Grid xs={12}>
+         <Grid container justifyContent={"center"}>
              {ListItems.map(e=>(
                   <Grid item xs={12} sm={6} md={3}>
                   <ListItem style={{cursor:'pointer' ,padding:'0'}} padding={0} alignItems="flex-start">
@@ -94,7 +94,7 @@ export default function AppTab({ListItems,index,handleChange,ListTag}) {
        
          </Grid>
           
-      </Container>
+      </Grid>
           
       </TabPanel>       
           ))}

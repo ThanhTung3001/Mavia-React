@@ -11,8 +11,8 @@ import { margin,padding } from '@mui/system';
 export default function AppTrending({avatar,username,winsday,level}) {
   return (
     <>
-        <List sx={12}>
-          <ListItem justifyContent={"center"} style={{cursor:'pointer' ,padding:'0'}} padding={0} alignItems="flex-start">
+        <List xs={12}>
+          <ListItem  justifyContent={"center"} style={{cursor:'pointer' ,padding:'0'}} padding={0} alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src={avatar} />
             </ListItemAvatar>
