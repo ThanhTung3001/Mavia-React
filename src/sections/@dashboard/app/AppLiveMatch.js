@@ -8,14 +8,18 @@ import { display, fontSize } from '@mui/system';
 export default function AppLiveMatch() {
     return (<>
 
-        <Card
+        <Card variant="outlined" 
             sx={{
+                
                 py: 5,
                 boxShadow: 0,
                 textAlign: 'center',
-
-
             }}
+            style={
+                {
+                    'padding':0
+                }
+            }
             justifyContent={"center"}>
             <CardActionArea>
                 <CardMedia
