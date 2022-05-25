@@ -25,7 +25,7 @@ export default function AppLiveMatch() {
                     alt="green iguana"
                 />
                 <CardContent style={{ padding: 5 }} >
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h5" component="div" textAlign={"start"}>
                         Lizard
                     </Typography>
                     <Stack direction="row" spacing={1} justifyContent={"space-between"}>
