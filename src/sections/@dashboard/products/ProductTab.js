@@ -19,7 +19,8 @@ export default function ProductTab() {
   const [age, setAge] = React.useState('');
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1' }}>
+    <Grid container justifyContent={"center"}>
+      <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -138,5 +139,6 @@ export default function ProductTab() {
         <TabPanel value="3">Item Three</TabPanel>
       </TabContext>
     </Box>
+    </Grid>
   );
 }
