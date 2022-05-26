@@ -64,8 +64,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         <Logo />
       </Box>
 
-      
-
+    
       <NavSection navConfig={navConfig} />
 
       <Box sx={{ flexGrow: 1 }} />
