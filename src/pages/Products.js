@@ -13,7 +13,10 @@ export default function EcommerceShop() {
  
 
   return (
-    <Page title="Dashboard: Products">
+    <Page title="Dashboard: Products" style={{
+      display:'flex',
+      justifyContent:'center'
+    }}>
       <ProductTab/>
     </Page>
   );

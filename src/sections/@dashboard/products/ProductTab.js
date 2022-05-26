@@ -19,7 +19,10 @@ export default function ProductTab() {
   const [age, setAge] = React.useState('');
 
   return (
-    <Grid container justifyContent={"center"}>
+    <Grid container style={{
+      display:'flex',
+      justifyContent:'center'
+    }} maxWidth="xl" justifyContent={"center"}>
       <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -128,6 +131,7 @@ export default function ProductTab() {
               borderRadius:'2%',
               objectFit:'cover'
             }}
+            width='100%'
             height='830px'
               src='/static/mock-images/Matchs/map.jpg'
              alt='Map Game'
