@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // material
 import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
+import { Box, Link, Button, Drawer, Typography, Avatar, Stack,Grid } from '@mui/material';
 // mock
 import account from '../../_mock/account';
 // hooks
@@ -17,14 +19,9 @@ import navConfig from './NavConfig';
 
 // ----------------------------------------------------------------------
 
-const DRAWER_WIDTH = 280;
+const DRAWER_WIDTH = 240;
 
-const RootStyle = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('lg')]: {
-    flexShrink: 0,
-    width: DRAWER_WIDTH,
-  },
-}));
+
 
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -42,6 +39,26 @@ DashboardSidebar.propTypes = {
 };
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+
+  const[open,setOpen]=useState(true)
+
+  const [widthSide,setWidthSide]=useState(DRAWER_WIDTH);
+
+  const handleClickSide = (e)=>{
+    if(open){
+      setOpen(false);
+      setWidthSide(65);
+    }else{
+        setOpen(true);
+        setWidthSide(DRAWER_WIDTH);
+    }
+  }
+  const RootStyle = styled('div')(({ theme }) => ({
+    [theme.breakpoints.up('lg')]: {
+      flexShrink: 0,
+      width: widthSide,
+    },
+  }));
   const { pathname } = useLocation();
 
   const isDesktop = useResponsive('up', 'lg');
@@ -64,7 +81,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         <Logo />
       </Box>
 
-    
+        <Grid container justifyContent={'flex-end'}>
+          <Button onClick={handleClickSide} variant='text' style={{
+            maxWidth:'50px',
+            margin:'10px 0 10px 0'
+          }}>
+            {open===true?<CloseIcon/>:<KeyboardArrowRightIcon/>}
+          </Button>
+        </Grid>
       <NavSection navConfig={navConfig} />
 
       <Box sx={{ flexGrow: 1 }} />
@@ -81,7 +105,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           open={isOpenSidebar}
           onClose={onCloseSidebar}
           PaperProps={{
-            sx: { width: DRAWER_WIDTH },
+            sx: { width: widthSide },
           }}
         >
           {renderContent}
@@ -95,7 +119,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           variant="persistent"
           PaperProps={{
             sx: {
-              width: DRAWER_WIDTH,
+              width: widthSide,
               bgcolor: 'background.default',
               borderRightStyle: 'dashed',
             },

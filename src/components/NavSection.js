@@ -71,8 +71,9 @@ function NavItem({ item, active }) {
           <ListItemText disableTypography primary={title} />
           {info && info}
           <Iconify
+          
             icon={open ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
-            sx={{ width: 16, height: 16, ml: 1 }}
+            sx={{ width: 16, height: 16, ml:1 }}
           />
         </ListItemStyle>
 

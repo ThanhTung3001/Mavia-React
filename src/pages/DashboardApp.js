@@ -100,7 +100,7 @@ export default function DashboardApp() {
         </Grid>
         <Grid container spacing={1} justifyContent={"center"} >
 
-          <Grid container item xs={12} sm={8} md={9} spacing={3} justifyContent={"center"}>
+          <Grid container item xs={12} sm={8} md={10} spacing={3} justifyContent={"center"}>
 
             <Grid item xs={12} sm={6} md={2.3}>
               <AppWidgetSummary title="All Battles" total={714000} icon={'arcticons:battleforwesnoth'} />
@@ -177,7 +177,7 @@ export default function DashboardApp() {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={3} sm={12} container>
+          <Grid item xs={12} md={2} sm={12} container>
 
             <Grid item xs={12} maxHeight={1000}>
               <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />

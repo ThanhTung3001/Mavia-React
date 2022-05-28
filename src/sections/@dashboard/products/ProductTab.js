@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ListIcon, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos, Directions } from '@mui/icons-material';
+import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@mui/icons-material';
 import { Grid, Container, Typography, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
