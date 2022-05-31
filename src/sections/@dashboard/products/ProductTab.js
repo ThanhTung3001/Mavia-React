@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@mui/icons-material';
+import { List,PropaneTank,CenterFocusStrong,Support,Gamepad,FavoriteBorder, Menu,NoBackpack,Policy, Castle,Hearing,Visibility, PanoramaPhotosphere, Man, ArrowForwardIos,HealthAndSafety } from '@mui/icons-material';
 import { Grid, Container, Typography, Button, InputLabel, MenuItem, FormControl, Select, FormGroup, FormControlLabel, FormLabel, Checkbox } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -222,7 +222,7 @@ export default function ProductTab() {
                         <Grid item xs={12} md={12}  >
                           <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
                             <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
-                              Base For Sales
+                              Hero For Sales
                             </Typography>
                             <Typography component="span" variant='body2'>
                               1543 Result
@@ -269,7 +269,10 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
-                                 Hands
+                               
+                                 <HealthAndSafety fontSize="medium" color='primary' />
+                                   Hands
+                          
                                 </Box>
                               }
                               labelPlacement="end" />
@@ -280,6 +283,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                  <Hearing fontSize="medium" color='primary'/>
                                   Ears
                                 </Box>
                               }
@@ -291,6 +295,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                  <Visibility fontSize="medium" color='primary' />
                                   Eyes
                                 </Box>
                               }
@@ -302,6 +307,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                  <NoBackpack fontSize="medium" color='primary'/>
                                   Back
                                 </Box>
                               }
@@ -313,6 +319,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                  <Policy fontSize="medium" color='primary' />
                                   Legs
                                 </Box>
                               }
@@ -332,9 +339,11 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                  <CenterFocusStrong fontSize="medium" color='primary'/>
                                   DMG DPS
                                 </Box>
                               }
+                              // PropaneTank,Support,Gamepad,FavoriteBorder
                               labelPlacement="end" />
                           </Grid>
                           <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
@@ -344,6 +353,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                   <PropaneTank fontSize="medium" color='primary'/>
                                   Tanker
                                 </Box>
                               }
@@ -355,6 +365,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                   <Support fontSize="medium" color='primary'/>
                                   Support
                                 </Box>
                               }
@@ -366,6 +377,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                   <Gamepad fontSize="medium" color='primary'/>
                                   Controller
                                 </Box>
                               }
@@ -377,6 +389,7 @@ export default function ProductTab() {
                               control={<Checkbox />}
                               label={
                                 <Box component="div" fontSize={20}>
+                                   <FavoriteBorder fontSize="medium" color='primary'/>
                                   Healder
                                 </Box>
                               }
