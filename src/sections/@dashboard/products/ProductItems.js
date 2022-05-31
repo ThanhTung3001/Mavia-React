@@ -3,146 +3,57 @@ import { Grid,Container,Card,CardMedia,CardContent,Typography,CardActions,Button
 from '@mui/material';
 import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@mui/icons-material';
 
- const ProductItems = () => {
-   
+ const ProductItems = ({mouseHandle,md,sm,lg,listItems}) => {
+  
   return (
     <Grid container spacing={2} justifyContent={"center"}>
-    <Grid item xs={12} sm={8} md={6}>
-    <Card >
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/mock-images/Matchs/land.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="h5" >
-          Mega Fortress
-        </Typography>
-        <Typography variant="body2" >
-         HQ Level 4 .Plot #142
-        </Typography>
-      </CardContent>
-      <Divider  />
-      <CardActions disableSpacing>
-    <Grid container justifyContent={"space-between"}>
-    <Typography variant="h7"  style={{
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    }} >
-          Auction
-        </Typography>
-     <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
-         3.100$
-     </Button>
-      
-    </Grid>
-      </CardActions>
-    </Card>
-    </Grid>
-    <Grid item xs={12} sm={8} md={6}>
-    <Card >
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/mock-images/Matchs/land.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="h5" >
-          Mega Fortress
-        </Typography>
-        <Typography variant="body2" >
-         HQ Level 4 .Plot #142
-        </Typography>
-      </CardContent>
-      <Divider  />
-      <CardActions disableSpacing>
-    <Grid container justifyContent={"space-between"}>
-    <Typography variant="h7"  style={{
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    }} >
-          Auction
-        </Typography>
-     <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
-         3.100$
-     </Button>
-      
-    </Grid>
-      </CardActions>
-    </Card>
-    </Grid>
-    <Grid item xs={12} sm={8} md={6}>
-    <Card >
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/mock-images/Matchs/land.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="h5" >
-          Mega Fortress
-        </Typography>
-        <Typography variant="body2" >
-         HQ Level 4 .Plot #142
-        </Typography>
-      </CardContent>
-      <Divider  />
-      <CardActions disableSpacing>
-    <Grid container justifyContent={"space-between"}>
-    <Typography variant="h7" style={{
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    }} >
-          Auction
-        </Typography>
-     <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
-         3.100$
-     </Button>
-      
-    </Grid>
-      </CardActions>
-    </Card>
-    </Grid>
-    <Grid item xs={12} sm={8} md={6}>
-    <Card >
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/mock-images/Matchs/land.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="h5" >
-          Mega Fortress
-        </Typography>
-        <Typography variant="body2" >
-         HQ Level 4 .Plot #142
-        </Typography>
-      </CardContent>
-      <Divider  />
-      <CardActions disableSpacing>
-    <Grid container justifyContent={"space-between"}>
-    <Typography variant="h7"  style={{
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    }} >
-          Auction
-        </Typography>
-     <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
-         3.100$
-     </Button>
-      
-    </Grid>
-      </CardActions>
-    </Card>
-    </Grid>
+     {
+       (listItems.map((e,index)=>(
+        <Grid key={index} item xs={12} sm={sm} md={md} lg={lg} style={{
+          display:'flex',
+          justifyContent:'center'
+        }}>
+       <Button variant='text' style={{
+         padding:'0'
+       }} href={`/dashboard/products/${e.id}`}>
+       <Card onMouseOver={(event)=>{mouseHandle(e); }}  >
+          <CardMedia
+            component="img"
+            height="194"
+            image={e.img}
+            alt="Paella dish"
+          />
+          <CardContent>
+            <Typography variant="h5" >
+            {e.title}
+            </Typography>
+            <Typography variant="body2" >
+            {e.description}
+            </Typography>
+          </CardContent>
+          <Divider  />
+          <CardActions disableSpacing>
+        <Grid container justifyContent={"space-between"}>
+        <Typography variant="h7"  style={{
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
+        }} >
+              {e.action}
+            </Typography>
+         <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
+            {e.value}
+         </Button>
+          
+        </Grid>
+          </CardActions>
+        </Card>
+       </Button>
+        </Grid>
+       )))
+     }
+   
+  
     </Grid>
   )
 }
