@@ -4,3 +4,7 @@ span.MuiSlider-thumbColorPrimary.MuiSlider-thumbSizeMedium.MuiSlider-thumb.Mui-d
 span.MuiSlider-thumbColorPrimary.MuiSlider-thumbSizeMedium.MuiSlider-thumb.css-3nsjq9-MuiSlider-thumb{
     display: none !important;
 }
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root{
+    width: 40px;
+    height: 40px;
+}

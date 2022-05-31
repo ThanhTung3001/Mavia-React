@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@mui/icons-material';
-import { Grid, Container, Typography, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
+import { Grid, Container, Typography, Button, InputLabel, MenuItem, FormControl, Select, FormGroup, FormControlLabel, FormLabel, Checkbox } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -64,6 +64,37 @@ export default function ProductTab() {
     action: 'Buy it now',
     value: '2,500.50'
   }];
+  const listHero = [
+    {
+      id: 1,
+      img: '/static/mock-images/Hero/Hero1.png',
+      title: 'Mega Fortress',
+      description: 'HQ Level 4 .Plot #142',
+      action: 'Auction',
+      value: '3,100.00'
+    }, {
+      id: 2,
+      img: '/static/mock-images/Hero/Hero2.png',
+      title: 'Mega Fortress',
+      description: 'HQ Level 4 .Plot #645',
+      action: 'Buy it now',
+      value: '1,298.50'
+    }, {
+      id: 3,
+      img: '/static/mock-images/Hero/Hero3.png',
+      title: 'Mega Fortress',
+      description: 'HQ Level 8 .Plot #1983',
+      action: 'Buy it now',
+      value: '6,500.50'
+    }, {
+      id: 4,
+      img: '/static/mock-images/Hero/Hero4.png',
+      title: 'Mega Fortress',
+      description: 'HQ Level 2 .Plot #1004',
+      action: 'Buy it now',
+      value: '2,500.50'
+    }
+  ]
 
   const [age, setAge] = React.useState('');
   const [item, setItem] = React.useState({});
@@ -135,9 +166,9 @@ export default function ProductTab() {
             <TabPanel value="4">Item Two</TabPanel>
             <TabPanel value="3">
               <Grid container direction="row" spacing={3} justifyContent={"center"} >
-                <Grid item xs={12} sm={12} md={12}>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={3}>
                   <Grid container spacing={1} justifyContent={"center"} >
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} >
                       <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                         <InputLabel id="demo-select-small">Sale Type</InputLabel>
                         <Select
@@ -154,7 +185,7 @@ export default function ProductTab() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} >
                       <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                         <InputLabel id="demo-select-small">Price Range</InputLabel>
                         <Select
@@ -170,7 +201,7 @@ export default function ProductTab() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} >
                       <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                         <InputLabel id="demo-select-small">HQ Level</InputLabel>
                         <Select
@@ -186,44 +217,233 @@ export default function ProductTab() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12}>
+                      <Grid container direction={"column-reverse"}>
+                        <Grid item xs={12} md={12}  >
+                          <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
+                            <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
+                              Base For Sales
+                            </Typography>
+                            <Typography component="span" variant='body2'>
+                              1543 Result
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                        <Grid item xs={12} md={12} mt={1} >
+                          <Grid item xs={12} sx={{ justifyContent: 'flex-end' }}>
+
+                            <FormControl sx={{ m: 1, width: '100%' }} size="small">
+                              <InputLabel id="demo-select-small">Sale Type</InputLabel>
+                              <Select
+                                labelId="demo-select-small"
+                                id="demo-select-small"
+                                value={age}
+
+                                label="Sale Type"
+                                onChange={(event) => { setAge(event.target.value) }}
+                              >
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem>
+                              </Select>
+                            </FormControl>
+
+                          </Grid>
+                        </Grid>
+
+                      </Grid>
+                    </Grid>
+                    <Grid item xs={12} >
                       <FormControl sx={{ m: 1, minWidth: 150, width: '100%' }} size="small">
-                        <Button variant='contained' endIcon={<ArrowForwardIos />}>Collapse Map</Button>
+                        <Button variant='contained' >Filter </Button>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} md={6} marginLeft={0} mt={1} marginBottom={2} >
-                      <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
-                        <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
-                          Base For Sales
-                        </Typography>
-                        <Typography component="span" variant='body2'>
-                          1543 Result
-                        </Typography>
-                      </Grid>
+                    <Grid item xs={12}
+                    >
+                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
+                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Class</Typography></FormLabel>
+                        <FormGroup aria-label="position" row>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                 Hands
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Ears
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Eyes
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Back
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Legs
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          {/* ears, eyes, back, legs, hands */}
+                        </FormGroup>
+                      </FormControl>
                     </Grid>
-                    <Grid item xs={12} md={5} mt={1} >
-                      <Grid item xs={12} sx={{ justifyContent: 'flex-end' }}>
+                    <Grid item xs={12} >
+                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
+                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Type</Typography></FormLabel>
+                        <FormGroup aria-label="position" row>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  DMG DPS
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
 
-                        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                          <InputLabel id="demo-select-small">Sale Type</InputLabel>
-                          <Select
-                            labelId="demo-select-small"
-                            id="demo-select-small"
-                            value={age}
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Tanker
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Support
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Controller
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Healder
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                        </FormGroup>
 
-                            label="Sale Type"
-                            onChange={(event) => { setAge(event.target.value) }}
-                          >
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
-                          </Select>
-                        </FormControl>
+                      </FormControl>
+                    </Grid>
+                    <Grid item xs={12} >
+                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
+                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Rarity </Typography></FormLabel>
+                        <FormGroup aria-label="position" row>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                 Common 
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
 
-                      </Grid>
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Epic 
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Mythical 
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
+                            <FormControlLabel
+                              value="end"
+                              control={<Checkbox />}
+                              label={
+                                <Box component="div" fontSize={20}>
+                                  Legendary
+                                </Box>
+                              }
+                              labelPlacement="end" />
+                          </Grid>
+                        
+                        </FormGroup>
+
+                      </FormControl>
                     </Grid>
                   </Grid>
-                  <ProductItems listItems={listItems} sm={6} md={3} lg={2} mouseHandle={onHoverItem} />
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={9}>
+                  <ProductItems listItems={listHero} sm={6} md={3} lg={3} mouseHandle={onHoverItem} />
                 </Grid>
               </Grid>
             </TabPanel>
@@ -295,39 +515,39 @@ export default function ProductTab() {
                       </Grid>
                     </Grid>
                     <Grid item xs={12}>
-                     <Grid container>
-                     <Grid item xs={12} sm={6} md={6} >
-                        <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
-                          <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
-                            Base For Sales
-                          </Typography>
-                          <Typography component="span" variant='body2'>
-                            1543 Result
-                          </Typography>
+                      <Grid container>
+                        <Grid item xs={12} sm={6} md={6} >
+                          <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
+                            <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
+                              Base For Sales
+                            </Typography>
+                            <Typography component="span" variant='body2'>
+                              1543 Result
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                        <Grid item xs={12} sm={5} md={5}>
+                          <Grid item xs={12} sx={{ justifyContent: 'flex-end' }}>
+
+                            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                              <InputLabel id="demo-select-small">Sale Type</InputLabel>
+                              <Select
+                                labelId="demo-select-small"
+                                id="demo-select-small"
+                                value={age}
+
+                                label="Sale Type"
+                                onChange={(event) => { setAge(event.target.value) }}
+                              >
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem>
+                              </Select>
+                            </FormControl>
+
+                          </Grid>
                         </Grid>
                       </Grid>
-                      <Grid item xs={12} sm={5} md={5}>
-                        <Grid item xs={12} sx={{ justifyContent: 'flex-end' }}>
-
-                          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                            <InputLabel id="demo-select-small">Sale Type</InputLabel>
-                            <Select
-                              labelId="demo-select-small"
-                              id="demo-select-small"
-                              value={age}
-
-                              label="Sale Type"
-                              onChange={(event) => { setAge(event.target.value) }}
-                            >
-                              <MenuItem value={10}>Ten</MenuItem>
-                              <MenuItem value={20}>Twenty</MenuItem>
-                              <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                          </FormControl>
-
-                        </Grid>
-                      </Grid>
-                     </Grid>
                     </Grid>
                   </Grid>
                   <ProductItems listItems={listItems} sm={6} md={6} lg={4} mouseHandle={onHoverItem} />

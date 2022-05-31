@@ -19,8 +19,13 @@ import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@
        <Card onMouseOver={(event)=>{mouseHandle(e); }}  >
           <CardMedia
             component="img"
+             style={{
+               minWidth:'296px',
+               backgroundColor:'#d3d3d6'
+             }}
             height="194"
             image={e.img}
+            
             alt="Paella dish"
           />
           <CardContent>
