@@ -65,14 +65,16 @@ export default function DashboardNavbar({ onOpenSidebar }) {
            <Button variant='outlined' startIcon={<Diamond fontSize='small' color='primary'/>}>115,200.46</Button>
            <Button variant='outlined' startIcon={<Diamond fontSize='small' color='error'/>}>451,234.36</Button>
            <Button variant='outlined' startIcon={<PanoramaPhotosphere fontSize='small'/>}>212,234.43</Button>
-           <Button variant='outlined'  startIcon={<ModeNight fontSize='small' color='inherit' style={{
+           <Button variant='outlined'  ><ModeNight fontSize='small' color='inherit' style={{
              color:'black'
-           }}/>}/>
-            <Button variant='outlined' startIcon={<Bolt fontSize='small' color='inherit' style={{
+           }}/></Button>
+            <Button variant='outlined' >
+            <Bolt fontSize='small' color='inherit' style={{
              color:'black'
-           }}/>}/>
+           }}/>
+            </Button>
            <ButtonGroup disableElevation variant="contained">
-            <Button startIcon={<PanoramaPhotosphere fontSize='small'/>}>0,0747ETH</Button>
+            <Button startIcon={<PanoramaPhotosphere fontSize='small'/>} style={{color:'#000'}}>0,0747ETH</Button>
             <Button disabled id="button_token" >{processToken(guid.raw())}</Button>
           </ButtonGroup>
         </Stack>

@@ -21,3 +21,12 @@ overflow: hidden;
 text-overflow: ellipsis;
 word-break: break-word;
 }
+svg {
+    margin-right: 5px;
+}
+.recharts-wrapper {
+    width: 100% !important;
+}
+svg.recharts-surface {
+    width: 100%;
+}

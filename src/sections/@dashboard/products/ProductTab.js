@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { List,PropaneTank,CenterFocusStrong,Support,Gamepad,FavoriteBorder, Menu,NoBackpack,Policy, Castle,Hearing,Visibility, PanoramaPhotosphere, Man, ArrowForwardIos,HealthAndSafety } from '@mui/icons-material';
 import { Grid, Container, Typography, Button, InputLabel, MenuItem, FormControl, Select, FormGroup, FormControlLabel, FormLabel, Checkbox } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -7,6 +8,9 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import ProductItems from './ProductItems';
+import Hero from './Hero';
+
+
 
 
 
@@ -164,302 +168,7 @@ export default function ProductTab() {
             </Box>
             <TabPanel value="1">Item Two</TabPanel>
             <TabPanel value="4">Item Two</TabPanel>
-            <TabPanel value="3">
-              <Grid container direction="row" spacing={3} justifyContent={"center"} >
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={3}>
-                  <Grid container spacing={1} justifyContent={"center"} >
-                    <Grid item xs={12} >
-                      <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
-                        <InputLabel id="demo-select-small">Sale Type</InputLabel>
-                        <Select
-                          labelId="demo-select-small"
-                          id="demo-select-small"
-                          value={age}
-
-                          label="Sale Type"
-                          onChange={(event) => { setAge(event.target.value) }}
-                        >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} >
-                      <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
-                        <InputLabel id="demo-select-small">Price Range</InputLabel>
-                        <Select
-                          labelId="demo-select-small"
-                          id="demo-select-small"
-                          value={age}
-                          label="Price Range"
-                          onChange={(event) => { setAge(event.target.value) }}
-                        >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} >
-                      <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
-                        <InputLabel id="demo-select-small">HQ Level</InputLabel>
-                        <Select
-                          labelId="demo-select-small"
-                          id="demo-select-small"
-                          value={age}
-                          label="HQ Level"
-                          onChange={(event) => { setAge('') }}
-                        >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Grid container direction={"column-reverse"}>
-                        <Grid item xs={12} md={12}  >
-                          <Grid item xs={12} marginLeft={0} style={{ paddingLeft: '0px' }}>
-                            <Typography component="h5" variant='h5' style={{ paddingLeft: '0px' }}>
-                              Hero For Sales
-                            </Typography>
-                            <Typography component="span" variant='body2'>
-                              1543 Result
-                            </Typography>
-                          </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={12} mt={1} >
-                          <Grid item xs={12} sx={{ justifyContent: 'flex-end' }}>
-
-                            <FormControl sx={{ m: 1, width: '100%' }} size="small">
-                              <InputLabel id="demo-select-small">Sale Type</InputLabel>
-                              <Select
-                                labelId="demo-select-small"
-                                id="demo-select-small"
-                                value={age}
-
-                                label="Sale Type"
-                                onChange={(event) => { setAge(event.target.value) }}
-                              >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                              </Select>
-                            </FormControl>
-
-                          </Grid>
-                        </Grid>
-
-                      </Grid>
-                    </Grid>
-                    <Grid item xs={12} >
-                      <FormControl sx={{ m: 1, minWidth: 150, width: '100%' }} size="small">
-                        <Button variant='contained' >Filter </Button>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12}
-                    >
-                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
-                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Class</Typography></FormLabel>
-                        <FormGroup aria-label="position" row>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                               
-                                 <HealthAndSafety fontSize="medium" color='primary' />
-                                   Hands
-                          
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  <Hearing fontSize="medium" color='primary'/>
-                                  Ears
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  <Visibility fontSize="medium" color='primary' />
-                                  Eyes
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  <NoBackpack fontSize="medium" color='primary'/>
-                                  Back
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  <Policy fontSize="medium" color='primary' />
-                                  Legs
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          {/* ears, eyes, back, legs, hands */}
-                        </FormGroup>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} >
-                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
-                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Type</Typography></FormLabel>
-                        <FormGroup aria-label="position" row>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  <CenterFocusStrong fontSize="medium" color='primary'/>
-                                  DMG DPS
-                                </Box>
-                              }
-                              // PropaneTank,Support,Gamepad,FavoriteBorder
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                   <PropaneTank fontSize="medium" color='primary'/>
-                                  Tanker
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                   <Support fontSize="medium" color='primary'/>
-                                  Support
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                   <Gamepad fontSize="medium" color='primary'/>
-                                  Controller
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                   <FavoriteBorder fontSize="medium" color='primary'/>
-                                  Healder
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                        </FormGroup>
-
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} >
-                      <FormControl component="fieldset" fullWidth style={{ marginTop: '10px' }}>
-                        <FormLabel component="legend"><Typography component="h4" variant='h4' color='primary'>Rarity </Typography></FormLabel>
-                        <FormGroup aria-label="position" row>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                 Common 
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  Epic 
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  Mythical 
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                          <Grid item xs={4} sm={3} md={3} lg={4} xl={6}>
-                            <FormControlLabel
-                              value="end"
-                              control={<Checkbox />}
-                              label={
-                                <Box component="div" fontSize={20}>
-                                  Legendary
-                                </Box>
-                              }
-                              labelPlacement="end" />
-                          </Grid>
-                        
-                        </FormGroup>
-
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={9}>
-                  <ProductItems listItems={listHero} sm={6} md={3} lg={3} mouseHandle={onHoverItem} />
-                </Grid>
-              </Grid>
-            </TabPanel>
+             <TabPanel value='3'><Hero/></TabPanel>
             <TabPanel value="2">
               <Grid container spacing={3} justifyContent={"center"} >
                 <Grid item xs={12} sm={12} md={5}>
@@ -520,9 +229,8 @@ export default function ProductTab() {
                           </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={6}>
-
                           <FormControl sx={{ m: 1, minWidth: 150, width: '100%', marginLeft: '10px' }} size="small">
-                            <Button variant='contained' endIcon={<ArrowForwardIos />}>Collapse Map</Button>
+                            <Button variant='contained' endIcon={<ArrowForwardIos fontSize='small' />}>Collapse Map</Button>
                           </FormControl>
                         </Grid>
                       </Grid>
@@ -563,21 +271,19 @@ export default function ProductTab() {
                       </Grid>
                     </Grid>
                   </Grid>
-                  <ProductItems listItems={listItems} sm={6} md={6} lg={4} mouseHandle={onHoverItem} />
+                  <ProductItems listItems={listItems} sm={6} md={6} lg={6} mouseHandle={onHoverItem} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={7} style={{ position: 'relative' }} id="post_div">
-                  {(hover === true) ? <CardHover /> : <>Nothing</>}
+                  {(hover === true) ? <CardHover /> : <> </>}
                   <img id='img_map'
                     style={{
                       borderRadius: '2%',
                       objectFit: 'cover'
                     }}
-
                     width='100%'
                     height='830px'
                     src='/static/mock-images/Matchs/map.jpg'
                     alt='Map Game'
-
                   />
                 </Grid>
               </Grid>

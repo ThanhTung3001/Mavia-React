@@ -5,3 +5,5 @@ export { default as ProductCartWidget } from './ProductCartWidget';
 export { default as ProductFilterSidebar } from './ProductFilterSidebar';
 export {default as ProductTab} from'./ProductTab';
 export {default as ProductItems} from'./ProductItems';
+export{default as Hero }from './Hero'
+export {default as ChartItems} from './ChartItems'
