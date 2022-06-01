@@ -13,3 +13,11 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root{
     justify-content: space-between;
     align-items: center;
 }
+#button_token{
+    display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+word-break: break-word;
+}

@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
+import {Diamond,PanoramaPhotosphere,ModeNight,Bolt} from'@mui/icons-material'
+import guid, { isGuid } from 'guid';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Stack, AppBar, Toolbar, IconButton } from '@mui/material';
+import { Box, Stack, AppBar, Toolbar, IconButton,Button,ButtonGroup } from '@mui/material';
 // components
 import Iconify from '../../components/Iconify';
 //
+
 import Searchbar from './Searchbar';
 import AccountPopover from './AccountPopover';
 import LanguagePopover from './LanguagePopover';
 import NotificationsPopover from './NotificationsPopover';
+
+
 
 // ----------------------------------------------------------------------
 
@@ -39,7 +44,12 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 DashboardNavbar.propTypes = {
   onOpenSidebar: PropTypes.func,
 };
+const processToken =(token)=>{
 
+  const head = token.slice(1,8);
+  const tail =token.slice(30,40);
+  return `${head}...${tail}`;
+}
 export default function DashboardNavbar({ onOpenSidebar }) {
   return (
     <RootStyle>
@@ -52,9 +62,19 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
-          <LanguagePopover />
-          <NotificationsPopover />
-          <AccountPopover />
+           <Button variant='outlined' startIcon={<Diamond fontSize='small' color='primary'/>}>115,200.46</Button>
+           <Button variant='outlined' startIcon={<Diamond fontSize='small' color='error'/>}>451,234.36</Button>
+           <Button variant='outlined' startIcon={<PanoramaPhotosphere fontSize='small'/>}>212,234.43</Button>
+           <Button variant='outlined'  startIcon={<ModeNight fontSize='small' color='inherit' style={{
+             color:'black'
+           }}/>}/>
+            <Button variant='outlined' startIcon={<Bolt fontSize='small' color='inherit' style={{
+             color:'black'
+           }}/>}/>
+           <ButtonGroup disableElevation variant="contained">
+            <Button startIcon={<PanoramaPhotosphere fontSize='small'/>}>0,0747ETH</Button>
+            <Button disabled id="button_token" >{processToken(guid.raw())}</Button>
+          </ButtonGroup>
         </Stack>
       </ToolbarStyle>
     </RootStyle>
