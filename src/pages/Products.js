@@ -14,7 +14,10 @@ export default function EcommerceShop() {
 
   return (
     <Page title="Dashboard: Products">
+      <Container>
       <ProductTab/>
+      </Container>
+
     </Page>
   );
 }

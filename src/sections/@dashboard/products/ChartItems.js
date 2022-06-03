@@ -41,7 +41,7 @@ const ChartItems = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
       };
-    const [value,setValue] =useState(1);
+    const [value,setValue] =useState('1');
   return (
       <Grid container>
            <Box sx={{ width: '100%', typography: 'body1' }}>

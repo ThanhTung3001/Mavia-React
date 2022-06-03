@@ -2,6 +2,7 @@ import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import guid, { isGuid } from 'guid';
 // material
 import {
   Card,
@@ -19,6 +20,11 @@ import {
   TablePagination,
 } from '@mui/material';
 // components
+import {
+  List,PropaneTank,CenterFocusStrong,Support,Gamepad,
+  FavoriteBorder, Menu,NoBackpack,Policy, Castle,Hearing,Visibility, Favorite,SportsEsports,AccountTree,KeyboardDoubleArrowDown,
+  PanoramaPhotosphere, Man, ArrowForwardIos,HealthAndSafety ,AccountCircle,Diamond,Article,LibraryBooks ,NotificationsActive,Settings
+ } from '@mui/icons-material';
 import Page from '../components/Page';
 import Label from '../components/Label';
 import Scrollbar from '../components/Scrollbar';
@@ -81,7 +87,7 @@ export default function User() {
 
   const [filterName, setFilterName] = useState('');
 
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(25);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -125,7 +131,12 @@ export default function User() {
   const handleFilterByName = (event) => {
     setFilterName(event.target.value);
   };
+  const processToken =(token)=>{
 
+    const head = token.slice(1,5);
+    const tail =token.slice(33,40);
+    return `${head}...${tail}`;
+  }
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
   const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
@@ -135,30 +146,22 @@ export default function User() {
   return (
     <Page title="User">
       <Container>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+        <Stack direction="column" alignItems="start" justifyContent="space-between" mb={2}>
           <Typography variant="h4" gutterBottom>
-            User
+            All Users
           </Typography>
-          <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
-          </Button>
+          <Typography variant="h7" gutterBottom>
+           1,234 result
+          </Typography>
+        
         </Stack>
 
         <Card>
-          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
-
+        
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table>
-                <UserListHead
-                  order={order}
-                  orderBy={orderBy}
-                  headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
-                  numSelected={selected.length}
-                  onRequestSort={handleRequestSort}
-                  onSelectAllClick={handleSelectAllClick}
-                />
+                
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
                     const { id, name, role, status, company, avatarUrl, isVerified } = row;
@@ -173,24 +176,68 @@ export default function User() {
                         selected={isItemSelected}
                         aria-checked={isItemSelected}
                       >
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, name)} />
-                        </TableCell>
+                      
                         <TableCell component="th" scope="row" padding="none">
                           <Stack direction="row" alignItems="center" spacing={2}>
+                            
                             <Avatar alt={name} src={avatarUrl} />
-                            <Typography variant="subtitle2" noWrap>
-                              {name}
+                            <Stack direction="column" alignItems='center' >
+                            <Typography variant="h6" noWrap>
+                          
+                             <RouterLink to="/dashboard/user/1" style={{
+                               textDecoration:'none',
+                               color:"black"
+                             }}> {name}</RouterLink>
                             </Typography>
+                            <Typography variant="h7" noWrap>
+                              {processToken(guid.raw())}
+                            </Typography>
+                            </Stack>
                           </Stack>
                         </TableCell>
-                        <TableCell align="left">{company}</TableCell>
-                        <TableCell align="left">{role}</TableCell>
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
                         <TableCell align="left">
-                          <Label variant="ghost" color={(status === 'banned' && 'error') || 'success'}>
-                            {sentenceCase(status)}
-                          </Label>
+                          <Stack direction='column'>
+                            <Typography variant="h6">
+                            {company}
+                            </Typography>
+                            <Typography variant="h7">
+                                 Matches won
+                            </Typography>
+                          </Stack>    
+                        </TableCell>
+                        <TableCell align="left">
+                        <Stack direction='column'>
+                            <Typography variant="h6">
+                               <Diamond fontSize='small' color='error'/>
+                            {role}
+                            </Typography>
+                            <Typography variant="h7">
+                                Total RuBy Earned
+                            </Typography>
+                          </Stack>    
+                        </TableCell>
+                        <TableCell align="left">  
+                        <Stack direction='column'>
+
+                            <Typography variant="h6">
+                          
+                            {isVerified}
+                            </Typography>
+                            <Typography variant="h7">
+                                Trophies Won
+                            </Typography>
+                          </Stack>    </TableCell>
+                        <TableCell align="left">
+                        <Stack direction='column'>
+
+                              <Typography variant="h6">
+
+                              {status}
+                              </Typography>
+                              <Typography variant="h7">
+                                 Win:Lose Ratio
+                              </Typography>
+                              </Stack>  
                         </TableCell>
 
                         <TableCell align="right">

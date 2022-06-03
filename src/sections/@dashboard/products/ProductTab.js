@@ -15,7 +15,7 @@ import Hero from './Hero';
 
 
 export default function ProductTab() {
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState('2');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -43,7 +43,7 @@ export default function ProductTab() {
     id: 1,
     img: '/static/mock-images/Bases/base1.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #142',
+    description: 'HQ Level 4 .Plrt #142',
     action: 'Auction',
     value: '3,100.00'
   }, {
@@ -173,9 +173,9 @@ export default function ProductTab() {
               <Grid container spacing={3} justifyContent={"center"} >
                 <Grid item xs={12} sm={12} md={5}>
                   <Grid container spacing={1} justifyContent={"center"} >
-                    <Grid item xs={12} sm={12} md={6}>
+                    <Grid item xs={12} sm={12} ld={12}>
                       <Grid container>
-                        <Grid item xs={12} sm={12} md={12} lg={6}>
+                        <Grid item xs={12} sm={12} md={12} lg={4}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">Sale Type</InputLabel>
                             <Select
@@ -192,7 +192,7 @@ export default function ProductTab() {
                             </Select>
                           </FormControl>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={6}>
+                        <Grid item xs={12} sm={12} md={12} lg={4}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">Price Range</InputLabel>
                             <Select
@@ -208,11 +208,7 @@ export default function ProductTab() {
                             </Select>
                           </FormControl>
                         </Grid>
-                      </Grid>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={6}>
-                      <Grid container>
-                        <Grid item xs={12} sm={12} md={12} lg={6}>
+                        <Grid item xs={12} sm={12} md={12} lg={4}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">HQ Level</InputLabel>
                             <Select
@@ -227,14 +223,17 @@ export default function ProductTab() {
                               <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
                           </FormControl>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={6}>
+                     
+                    </Grid>
+                      </Grid>
+                    </Grid>
+                    
+                       
+                    <Grid item xs={12} sm={12} md={12} lg={10} >
                           <FormControl sx={{ m: 1, minWidth: 150, width: '100%', marginLeft: '10px' }} size="small">
                             <Button variant='contained' endIcon={<ArrowForwardIos fontSize='small' />}>Collapse Map</Button>
                           </FormControl>
                         </Grid>
-                      </Grid>
-                    </Grid>
                     <Grid item xs={12}>
                       <Grid container>
                         <Grid item xs={12} sm={6} md={6} >
