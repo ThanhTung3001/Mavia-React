@@ -240,9 +240,7 @@ export default function User() {
                               </Stack>  
                         </TableCell>
 
-                        <TableCell align="right">
-                          <UserMoreMenu />
-                        </TableCell>
+                      
                       </TableRow>
                     );
                   })}

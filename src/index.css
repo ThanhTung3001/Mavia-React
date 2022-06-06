@@ -5,8 +5,8 @@ span.MuiSlider-thumbColorPrimary.MuiSlider-thumbSizeMedium.MuiSlider-thumb.css-3
     display: none !important;
 }
 svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
 .MuiBox-root.css-bk9fzy {
     display: flex;
@@ -21,12 +21,55 @@ overflow: hidden;
 text-overflow: ellipsis;
 word-break: break-word;
 }
-svg {
+/* svg {
     margin-right: 5px;
-}
+} */
 .recharts-wrapper {
     width: 100% !important;
 }
 svg.recharts-surface {
     width: 100%;
+}
+th.MuiTableCell-root.MuiTableCell-body.MuiTableCell-paddingNone.MuiTableCell-sizeMedium.css-7sb2n4-MuiTableCell-root{
+    padding: 20px;
+}
+@media (min-width: 1200px){
+.css-1oqqzyl-MuiContainer-root {
+    max-width: 2784px;
+}
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation0.MuiCard-root.css-m6djc-MuiPaper-root-MuiCard-root{
+    width: 100%;
+}
+.card_item{
+    position: relative;
+}
+.card_more{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.card-list_items{
+    position: absolute;
+    top: 22px;
+    
+    right: 2px;
+}
+.card_stack{
+    padding: 10px;
+    width: 200px;
+    background: #F9FAFB;
+    border-radius: 10px;
+    margin: 10px;
+}
+button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.css-1qwxowj-MuiButtonBase-root-MuiButton-root{
+    background-color: #F9FAFB;
+    
+    margin: 8px;
+    
+    padding: 8px;
+    height: 20px;
+    min-width: 30px !important;
+    border-radius: 5px;
 }

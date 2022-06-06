@@ -229,7 +229,7 @@ export default function ProductTab() {
                     </Grid>
                     
                        
-                    <Grid item xs={12} sm={12} md={12} lg={10} >
+                    <Grid item xs={12} sm={12} md={12} lg={12} >
                           <FormControl sx={{ m: 1, minWidth: 150, width: '100%', marginLeft: '10px' }} size="small">
                             <Button variant='contained' endIcon={<ArrowForwardIos fontSize='small' />}>Collapse Map</Button>
                           </FormControl>

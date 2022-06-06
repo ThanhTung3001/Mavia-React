@@ -1,12 +1,45 @@
-import React from 'react'
-import { Grid,Container,Card,CardMedia,CardContent,Typography,CardActions,Button,Divider,Avatar,Box,ListItemAvatar,ListItemText } 
+import React, { useState } from 'react'
+import { Grid,Container,Card,CardMedia,CardContent,Typography
+  ,CardActions,
+  Button,
+  Divider,
+  Avatar,
+  Box,ListItemAvatar,ListItemText,ClickAwayListener,ListItem, Stack 
+ } 
 from '@mui/material';
 import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@mui/icons-material';
 import { Link,Redirect  } from 'react-router-dom';
+import { ListerningMore } from './ListerningMore';
 
-
- const ProductItems = ({mouseHandle,md,sm,lg,listItems}) => {
+const styles = {
+  position: 'absolute',
+  top: 28,
+  right: 0,
+  left: 0,
+  zIndex: 1,
+  border: '1px solid',
+  p: 1,
+  bgcolor: 'background.paper',
+};
+const styleForMore={
+  position:'absolute',
+  top:2,
+  right:2,
+  zIndex:1000
+}
+const styleForStack={
+  backgroundColor:'while'
+}
+ const ProductItems = ({mouseHandle,md,sm,lg,listItems,mode=false}) => {
+  const [open,setOpen]=useState(false);
   
+  const handleClickAway=()=>{
+    setOpen(false);
+  }
+  const handleClick=()=>{
+    setOpen((prev) => !prev);
+    // alert('open modal')
+  }
   return (
     <Grid container spacing={2} justifyContent={"center"}>
      {
@@ -15,14 +48,12 @@ import { Link,Redirect  } from 'react-router-dom';
           display:'flex',
           justifyContent:'center'
         }}>
-       <Button variant='text' style={{
-         padding:'0'
-       }} href={`/dashboard/products/${e.id}`}>
-       <Card onMouseOver={(event)=>{mouseHandle(e); }}  >
+       
+       <Card className='card_item' onMouseOver={(event)=>{mouseHandle(e); }}  >
           <CardMedia
             component="img"
              style={{
-               minWidth:'296px',
+               width:'100%',
                backgroundColor:'#d3d3d6'
              }}
             height="194"
@@ -30,6 +61,7 @@ import { Link,Redirect  } from 'react-router-dom';
             
             alt="Paella dish"
           />
+          {mode?(<ListerningMore/>):null}
           <CardContent>
             <Typography variant="h5" >
             {e.title}
@@ -55,7 +87,7 @@ import { Link,Redirect  } from 'react-router-dom';
         </Grid>
           </CardActions>
         </Card>
-       </Button>
+       
         </Grid>
        )))
      }

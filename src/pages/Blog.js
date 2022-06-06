@@ -91,6 +91,8 @@ export default function Blog() {
   const handleMourse=()=>{
 
   }
+  const mode=true;
+
   return (
     <Page title="Dashboard: My account">
           <Grid sm={12}>
@@ -119,7 +121,7 @@ export default function Blog() {
                       </Typography>
                       <Grid sm={12}>
                         <Grid container>
-                          <ProductItems mouseHandle={handleMourse} md={3} sm={4} lg={2.4} listItems={bases}  />
+                          <ProductItems mode={mode} mouseHandle={handleMourse} md={3} sm={4} lg={2.4} listItems={bases}  />
                         </Grid>
                       </Grid>
                       <Typography variant='h4' component='h4'>
@@ -130,7 +132,7 @@ export default function Blog() {
                       </Typography>
                       <Grid sm={12}>
                         <Grid container>
-                          <ProductItems mouseHandle={handleMourse} md={3} sm={4} lg={2.4} listItems={heros}  />
+                          <ProductItems mode={mode} mouseHandle={handleMourse} md={3} sm={4} lg={2.4} listItems={heros}  />
                         </Grid>
                       </Grid>
                 </Container>
