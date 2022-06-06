@@ -1,133 +1,168 @@
-import PropTypes from 'prop-types';
-import { useEffect,useState } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-// material
-import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack,Grid } from '@mui/material';
-// mock
-import account from '../../_mock/account';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// components
-import Logo from '../../components/Logo';
-import Scrollbar from '../../components/Scrollbar';
-import NavSection from '../../components/NavSection';
-//
+import * as React from 'react';
+import { styled, useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import MuiDrawer from '@mui/material/Drawer';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import { Avatar,Stack } from '@mui/material';
 import navConfig from './NavConfig';
+import DashboardItems from './DashboardItems';
 
-// ----------------------------------------------------------------------
+const drawerWidth = 240;
 
-const DRAWER_WIDTH = 240;
+const openedMixin = (theme) => ({
+  width: drawerWidth,
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: 'hidden',
+});
 
+const closedMixin = (theme) => ({
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: 'hidden',
+  width: `calc(${theme.spacing(7)} + 1px)`,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(${theme.spacing(8)} + 1px)`,
+  },
+});
 
-
-const AccountStyle = styled('div')(({ theme }) => ({
+const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(2, 2.5),
-  borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
 }));
 
-// ----------------------------------------------------------------------
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
 
-DashboardSidebar.propTypes = {
-  isOpenSidebar: PropTypes.bool,
-  onCloseSidebar: PropTypes.func,
-};
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+    boxSizing: 'border-box',
+    ...(open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
+  }),
+);
 
-export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+export default function DashboardSidebar() {
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
-  const[open,setOpen]=useState(true)
-
-  const [widthSide,setWidthSide]=useState(DRAWER_WIDTH);
-
-  const handleClickSide = (e)=>{
-    if(open){
-      setOpen(false);
-      setWidthSide(65);
-    }else{
-        setOpen(true);
-        setWidthSide(DRAWER_WIDTH);
-    }
+  const handleDrawer=()=>{
+    setOpen(prev=>!prev);
   }
-  const RootStyle = styled('div')(({ theme }) => ({
-    [theme.breakpoints.up('lg')]: {
-      flexShrink: 0,
-      width: widthSide,
-    },
-  }));
-  const { pathname } = useLocation();
-
-  const isDesktop = useResponsive('up', 'lg');
-
-  useEffect(() => {
-    if (isOpenSidebar) {
-      onCloseSidebar();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
-
-  const renderContent = (
-    <Scrollbar
-      sx={{
-        height: 1,
-        '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
-      }}
-    >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
-        <Logo />
-      </Box>
-
-        <Grid container justifyContent={'flex-end'}>
-          <Button onClick={handleClickSide} variant='text' style={{
-            maxWidth:'50px',
-            margin:'10px 0 10px 0'
-          }}>
-            {open===true?<CloseIcon/>:<KeyboardArrowRightIcon/>}
-          </Button>
-        </Grid>
-      <NavSection navConfig={navConfig} />
-
-      <Box sx={{ flexGrow: 1 }} />
-
-     
-    </Scrollbar>
-  );
 
   return (
-    <RootStyle>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+    
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader>
+         <Stack  direction={"row"} justifyContent={"space-between"}>
+        
+          <IconButton onClick={handleDrawer}>
+            {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+         </Stack>
+        </DrawerHeader>
+        <DrawerHeader sx={{paddingBottom:'5px',justifyContent:open?'start':'end'}}>
+          <Stack justifyContent={'flex-start'} direction={"row"} alignItems={"center"}  sx={{
+                    width: "100%",
+                    mr: open ? 3 : 'auto',
+                    justifyContent:'start',
+                    ml:'20px'
+                    
+                    
+                  }}>
+          
+            <img alt="Remy Sharp" src="/static/mock-images/Common/logo.png" style={{
+              width:'45px'
+            }} />
+            <Typography sx={{ opacity: open ? 1 : 0,ml:2 }} variant='h4' color="#324f8f">Mavia</Typography>
+            {/* <ListItemText primary={"Mavia "}  /> */}
+          
+          </Stack>
+      
+               
+             
+      
+        </DrawerHeader>
+        <Divider />
+        <List>
+          <DashboardItems navConfig={navConfig} open={open}/>
+        </List>
+        <Divider />
+        <List>
+          {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+          ))} */}
+        </List>
+      </Drawer>
      
-      {!isDesktop && (
-        <Drawer
-          open={isOpenSidebar}
-          onClose={onCloseSidebar}
-          PaperProps={{
-            sx: { width: widthSide },
-          }}
-        >
-          {renderContent}
-       
-        </Drawer>
-      )}
-
-      {isDesktop && (
-        <Drawer
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: widthSide,
-              bgcolor: 'background.default',
-              borderRightStyle: 'dashed',
-            },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      )}
-    </RootStyle>
+    </Box>
   );
 }

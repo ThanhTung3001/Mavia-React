@@ -54,32 +54,38 @@ const bases = [{
 const heros = [
   {
     id: 1,
-    img: '/static/mock-images/Hero/Hero1.png',
+    img: '/static/mock-images/Char/Layer 3 Large.png',
     title: 'Mega Fortress',
     description: 'HQ Level 4 .Plot #142',
     action: 'Auction',
     value: '3,100.00'
   }, {
     id: 2,
-    img: '/static/mock-images/Hero/Hero2.png',
+    img: '/static/mock-images/Char/Layer 11 Large.png',
     title: 'Mega Fortress',
     description: 'HQ Level 4 .Plot #645',
     action: 'Buy it now',
     value: '1,298.50'
   }, {
     id: 3,
-    img: '/static/mock-images/Hero/Hero3.png',
+    img: '/static/mock-images/Char/Layer 15 Large.png',
     title: 'Mega Fortress',
     description: 'HQ Level 8 .Plot #1983',
     action: 'Buy it now',
     value: '6,500.50'
   }, {
     id: 4,
-    img: '/static/mock-images/Hero/Hero4.png',
+    img: '/static/mock-images/Char/Layer 19 Large.png',
     title: 'Mega Fortress',
     description: 'HQ Level 2 .Plot #1004',
     action: 'Buy it now',
     value: '2,500.50'
+  }, {
+    id: 5,
+    img: '/static/mock-images/Char/Layer 34 Large.png',
+    title: 'Mega Fortress',
+    description: 'HQ Level 2 .Plot #1004',
+    action: 'Buy it now',
   }
 ]
 

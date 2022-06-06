@@ -22,8 +22,8 @@ import { Link,Redirect  } from 'react-router-dom';
           <CardMedia
             component="img"
              style={{
-               minWidth:'296px',
-               backgroundColor:'#d3d3d6'
+               backgroundColor:'#d3d3d6',
+               width:"100%"
              }}
             height="194"
             image={e.img}

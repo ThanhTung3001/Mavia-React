@@ -30,3 +30,9 @@ svg {
 svg.recharts-surface {
     width: 100%;
 }
+.css-1hmbogu{
+    padding: 0;
+}
+.icon_sidebar svg{
+    height: 30px !important;
+}

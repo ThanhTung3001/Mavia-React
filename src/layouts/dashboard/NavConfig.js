@@ -1,4 +1,11 @@
 // component
+
+import ExploreIcon from '@mui/icons-material/Explore';
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import Iconify from '../../components/Iconify';
 
 // ----------------------------------------------------------------------
@@ -9,22 +16,38 @@ const navConfig = [
   {
     title: 'Game',
     path: '/dashboard/app',
-    icon: getIcon('bxs:dashboard'),
+    icon: <VideogameAssetIcon/>,
+    haveSubNav:false
+   
   },
   {
     title: 'Explore',
     path: '/dashboard/user',
-    icon: getIcon('carbon:explore'),
+    icon: <ExploreIcon/>,  
+    haveSubNav:false
   },
   {
     title: 'Marketplace',
     path: '/dashboard/products',
-    icon: getIcon('healthicons:market-stall-outline'),
+    icon: <StorefrontIcon/>,
+    haveSubNav:true,
+    subList:[
+      {
+        title:"Dashboard",
+        path:"/dashboard",
+        icon:<DashboardIcon/>
+      },{
+         title:"Market",
+         path:"/dasboard/market",
+         icon:<LocalGroceryStoreIcon/>
+      }
+    ]
   },
   {
     title: 'My Account',
     path: '/dashboard/blog',
-    icon: getIcon('codicon:account'),
+    icon: <AccountCircleIcon/>,
+    haveSubNav:false
   },
 ];
 
