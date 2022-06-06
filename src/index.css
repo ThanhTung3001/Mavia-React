@@ -73,3 +73,9 @@ button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.
     min-width: 30px !important;
     border-radius: 5px;
 }
+.css-1hmbogu{
+    padding: 0;
+}
+.icon_sidebar svg{
+    height: 30px !important;
+}

@@ -53,8 +53,8 @@ const styleForStack={
           <CardMedia
             component="img"
              style={{
-               width:'100%',
-               backgroundColor:'#d3d3d6'
+               backgroundColor:'#d3d3d6',
+               width:'100%'
              }}
             height="194"
             image={e.img}
