@@ -24,28 +24,28 @@ import {ProductItems} from '../sections/@dashboard/products';
 // ----------------------------------------------------------------------
 const bases = [{
   id: 1,
-  img: '/static/mock-images/Bases/base1.png',
+  img: '/static/mock-images/Bases/map1.jpg',
   title: 'Mega Fortress',
   description: 'HQ Level 4 .Plrt #142',
   action: 'Auction',
   value: '3,100.00'
 }, {
   id: 2,
-  img: '/static/mock-images/Bases/base4.png',
+  img: '/static/mock-images/Bases/map2.jpg',
   title: 'Mega Fortress',
   description: 'HQ Level 4 .Plot #645',
   action: 'Buy it now',
   value: '1,298.50'
 }, {
   id: 3,
-  img: '/static/mock-images/Bases/base2.png',
+  img: '/static/mock-images/Bases/map3.jpg',
   title: 'Mega Fortress',
   description: 'HQ Level 8 .Plot #1983',
   action: 'Buy it now',
   value: '6,500.50'
 }, {
   id: 4,
-  img: '/static/mock-images/Bases/base3.png',
+  img: '/static/mock-images/Bases/map4.jpg',
   title: 'Mega Fortress',
   description: 'HQ Level 2 .Plot #1004',
   action: 'Buy it now',
