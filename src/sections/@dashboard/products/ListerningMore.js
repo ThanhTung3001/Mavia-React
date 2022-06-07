@@ -80,16 +80,77 @@ const listHero = [
     }
   ]
 
-const ChildModal=()=>{
-    const [open,setOpen]= useState(true);
+const listStatus = [
+  {
+    id: 1,
+    img: '/static/mock-images/Bases/map1.jpg',
+    title: 'Hero 1',
+    description: 'HQ Level 4 .Plot #142',
+    level:'Level 4',
+    action: 'Auction',
+    value: '3,100.00'
+  }, {
+    id: 2,
+    img: '/static/mock-images/Bases/map2.jpg',
+    title: 'Hero 2',
+    description: 'HQ Level 4 .Plot #645',
+    level:'Level 4',
+    action: 'Buy it now',
+    value: '1,298.50'
+  }, {
+    id: 3,
+    img: '/static/mock-images/Bases/map3.jpg',
+    title: 'Hero 3',
+    description: 'HQ Level 8 .Plot #1983',
+    level:'Level 8',
+    action: 'Buy it now',
+    value: '6,500.50'
+  }, {
+    id: 4,
+    img: '/static/mock-images/Bases/map4.jpg',
+    title: 'Hero 4',
+    description: 'HQ Level 2 .Plot #1004',
+    level:'Level 2',
+    action: 'Buy it now',
+    value: '2,500.50'
+  }
+];
+
+  const commonStyles = {
+    bgcolor: 'background.paper',
+    m: 1,
+    border: 1,
+    position:'relative',
+    borderRadius:'8px'
     
+  };
+const CardSingleItem=({data})=>{
+
+   return (
+    <Card sx={{ maxWidth: 90 ,height:90,...commonStyles, borderColor:'primary.main'}}>
+    <CardMedia
+      component="img"
+      height="90px"
+      image={data.img}
+      sx={{backgroundColor:'#d3d3d6',}}
+      alt="green iguana"
+    />
+    </Card>
+   )
+}
+
+const ChildModal=({heroItems})=>{
+    const [open,setOpen]= useState(true);
+    const [heros,setHeros] =useState([]);
     const handleClick=()=>{
         setOpen(prev=>!prev);
        
     }
-    const [heros,setHeros] =useState([]);
+    
     const handleChooses =()=>{
-        console.log(heros)
+      heroItems(heros);
+      setOpen(false);
+
     }
 
     return(
@@ -98,7 +159,7 @@ const ChildModal=()=>{
         <Typography variant='h4'  textAlign={"center"} paddingBottom={3} justifyContent={'center'}>Select Heroes</Typography>
         <Divider/>
            <CardItemHero data={listHero} Heros={setHeros}/>
-            <CardItemHero data={listHero} Heros={setHeros}/>
+         
            <Divider/>
            <Stack direction={'row'} justifyContent={"center"} spacing={3} paddingTop={3}>
                   <Button variant='outlined' size="large" sx={{minWidth:'120px'}} >Back</Button>
@@ -108,20 +169,111 @@ const ChildModal=()=>{
         </Modal>
     )
 }
+const StatusModal=({heroItems})=>{
+  const [open,setOpen]= useState(true);
+  const [heros,setHeros] =useState([]);
+  const handleClick=()=>{
+      setOpen(prev=>!prev);
+     
+  }
+  
+  const handleChooses =()=>{
+    heroItems(heros);
+    setOpen(false);
+
+  }
+
+  return(
+      <Modal open={open} onClose={handleClick}>
+      <Box sx={{ ...style, width: 800 }}>
+      <Typography variant='h4'  textAlign={"center"} paddingBottom={3} justifyContent={'center'}>Select Heroes</Typography>
+      <Divider/>
+         <CardItemHero data={listStatus} Heros={setHeros}/>
+         
+         <Divider/>
+         <Stack direction={'row'} justifyContent={"center"} spacing={3} paddingTop={3}>
+                <Button variant='outlined' size="large" sx={{minWidth:'120px'}} >Back</Button>
+                <Button variant='contained' size="large" sx={{minWidth:'120px'}} onClick={handleChooses} >Choose</Button>
+         </Stack>
+      </Box>
+      </Modal>
+  )
+}
+const FinishModal =({heroes,statuses,yourRuby,ruby})=>{
+  const [open,setOpen]= useState(true);
+  const [heros,setHeros] =useState([]);
+  const handleClick=()=>{
+      setOpen(prev=>!prev);
+     
+  }
+  
+  const handleChooses =()=>{
+
+    setOpen(false);
+
+  }
+  return(
+    <Modal open={open} onClose={handleClick}>
+    <Box sx={{ ...style, width: 800 }}>
+    <Typography variant='h5' textAlign={"center"} paddingBottom={1}>Partnership Sumary</Typography>
+    <Divider/>
+    <Grid xs={12} justifyContent={"flex-start"} sx={{display:'flex'}}>
+          <Grid sm={3}>
+            <img src="/static/mock-images/Bases/map1.jpg" alt="" />
+          </Grid>
+          <Grid sm={3} justifyContent={"center"} style={{display:'flex'}} textAlign={"center"} alignItems={"center"}>
+              <Stack  >
+                 <Typography variant='h5'>Cryptonomo</Typography>
+                 <Typography variant='body2'>HQ Level 6</Typography>
+              </Stack>
+          </Grid>
+    </Grid>
+
+    <Typography variant='h6' paddingBottom={1}>Bundled Heroes</Typography>
+    <Divider/>
+       <CardItemHero data={heroes} mode={false} />
+       <Divider/>
+       <Typography variant='h6' paddingBottom={1}>Bundled Statuses</Typography>
+       <CardItemHero data={statuses}  mode={false} />
+       <Stack direction={'row'} justifyContent={"center"} spacing={3} paddingTop={3}>
+              <Button variant='outlined' size="large" sx={{minWidth:'120px'}} >Back</Button>
+              <Button variant='contained' size="large" sx={{minWidth:'120px'}}  >Choose</Button>
+       </Stack>
+    </Box>
+    </Modal>
+)
+}
 
 const SecondModal=()=>{
-    const [ruby,setRuby] = useState('');
+    const [yourRuby,setYourRuby] = useState('');
+    const [ruby,setRuby]=useState('');
     const [openModalChild,setOpenModalChild] = useState(false);
+    const [open,setOpen] = useState(true);
+    const [heros,setHeros] = useState([]);
+    const [status,setStatus] = useState([]);
+    const [openModalStatus,setOpenModalStatus]=useState(false);
+    const [openModalFinish,setOpenModalFinish]=useState(false);
     const handleChange =(e)=>{
         setRuby(e.target.value)
     }
-    const onCloseModalChild=()=>{
-         setOpenModalChild(false);
-    }
-    const onOpenModalChild=()=>{
-        setOpenModalChild(true);
-    }
+     const handleCloseModal=()=>{
+          setOpen(false);
+     }
+     const onOpenModalChild =()=>{
+      setOpenModalChild(prev=>!prev)
+     }
+     const openModalStatusHandle = ()=>{
+      setOpenModalStatus(prev=>!prev)
+     }
+     const clickHandleContinue =()=>{
+      setOpenModalFinish(prev=>!prev);
+     }
+  
+
+
     return(
+      <>
+      <Modal open={open} onClose={handleCloseModal}>
         <Box sx={{ ...style, width: 550 }}>
         <Typography textAlign={"center"} variant='h4'>Partnership Details</Typography>
         <Typography variant='body1' textAlign={"center"}>
@@ -137,9 +289,11 @@ const SecondModal=()=>{
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={ruby}
+                value={yourRuby}
                 label="Your Ruby Split"
-                onChange={handleChange}
+                onChange={(e)=>{
+                  setYourRuby(e.target.value)
+                }}
             >
                 <MenuItem value={10}>10% RUBY Earnings</MenuItem>
                 <MenuItem value={20}>20% RUBY Earnings</MenuItem>
@@ -166,65 +320,110 @@ const SecondModal=()=>{
         </Stack>
          <Stack paddingTop={3}>
              <Typography variant='h6' paddingBottom={1}>Bundled Heroes</Typography>
+             <Grid xs={12} >
+               <Grid container>
+                 {
+                   heros.map(e=>(
+                    <Grid sm={3}>
+                    <CardSingleItem data={e}/>
+                  </Grid>
+                   ))
+                 }
+               </Grid>
+             </Grid>
          <Button variant='outlined' size='large' onClick={onOpenModalChild} startIcon={<Add/>}>Click to Add Heroes</Button>
          </Stack>
          <Stack paddingTop={3}>
              <Typography variant='h6' paddingBottom={1}>Bundled Statues</Typography>
-         <Button variant='outlined' size='large' startIcon={<Add/>}>Click to Add Statues</Button>
+             <Grid xs={12} >
+               <Grid container>
+                 {
+                   status.map(e=>(
+                    <Grid sm={3}>
+                    <CardSingleItem data={e}/>
+                  </Grid>
+                   ))
+                 }
+               </Grid>
+             </Grid>
+         <Button variant='outlined' size='large' startIcon={<Add/>} onClick={openModalStatusHandle}>Click to Add Statues</Button>
          </Stack>
          <Stack direction={'row'} spacing={4} paddingTop={4} justifyContent={"center"}>
              <Button variant='outlined' sx={{minWidth:130}} size='large'>Back</Button>
-             <Button variant='contained' sx={{minWidth:130}} size='large'>Continue</Button>
+             <Button variant='contained' sx={{minWidth:130}} onClick={clickHandleContinue} size='large'>Continue</Button>
          </Stack>
         </Stack>
-        <Modal open={openModalChild} onClose={onCloseModalChild}>
-           <ChildModal/>
-        </Modal>
+        
         </Box>
+        </Modal>
+        {
+          openModalChild?<ChildModal heroItems={setHeros}/>:null
+        }
+        {
+         openModalStatus?<StatusModal heroItems={setStatus} />:null
+        }
+        {
+          openModalFinish?<FinishModal heroes={heros} statuses={status} ruby={ruby} yourRuby={yourRuby} />:null
+        }
+        </>
     )
 }
 
-const CardModal=({clickHandle})=>{
-    const [modalChild,setModalChild] = useState(false);
+const CardModal=({openModal})=>{
+   //  alert(openModal)
+    
+    const [open,setOpen] = useState(true);
+    const[modalChild,setModalChild]= useState(false);
     const handleModalChild=()=>{
 
-       setModalChild(true);
+      setOpen(true);
        
     }
     const handleModalClose =()=>{
-        setModalChild(false);
+      setModalChild(true);
+      setOpen(false);
     }
     return (
         <>
-      <CardMedia
-        component="img"
-        height="300"
-        image="/static/mock-images/Bases/map2.jpg"
-        alt="green iguana"
-        sx={{marginTop:'20px',borderRadius:'5px'}}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h4" textAlign={"center"} component="div">
-            Create Partnership for "Cryptonomo"
-        </Typography>
-        <Typography variant="body1" textAlign={"center"} color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-       
-      </CardContent>
-      <CardActions sx={{justifyContent:'center'}}>
-        <Button variant='contained' sx={{minWidth:'200px'}} onClick={handleModalChild}  size="large">Continue</Button>
+          <Modal
+                open={open}
+                onClose={handleModalClose}
+                aria-labelledby="parent-modal-title"
+                aria-describedby="parent-modal-description"
+              >
+                <Box sx={{ ...style, width: 550 }}>
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image="/static/mock-images/Bases/map2.jpg"
+                    alt="green iguana"
+                    sx={{marginTop:'20px',borderRadius:'5px'}}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h4" textAlign={"center"} component="div">
+                        Create Partnership for "Cryptonomo"
+                    </Typography>
+                    <Typography variant="body1" textAlign={"center"} color="text.secondary">
+                      Lizards are a widespread group of squamate reptiles, with over 6,000
+                      species, ranging across all continents except Antarctica
+                    </Typography>
+                  
+                  </CardContent>
+                  <CardActions sx={{justifyContent:'center'}}>
+                    <Button variant='contained' sx={{minWidth:'200px'}} onClick={handleModalClose}  size="large">Continue</Button>
+                  </CardActions>
+                  
+                </Box>
+              </Modal> 
+             {
+               modalChild?<SecondModal />:null
+             }
         
-      </CardActions>
-      <Modal open={modalChild} onClose={handleModalClose}>
-       <SecondModal/>
-        </Modal>
     </>
     )
 }
 
-const CardItemHero =({data,Heros})=>{
+const CardItemHero =({data,Heros,mode})=>{
 
     return(
         <Grid xs={12}>
@@ -233,7 +432,7 @@ const CardItemHero =({data,Heros})=>{
                 {data.map(e=>{
                   return( 
                     <Grid xs={3} >
-                       <CardItem  id={e.id} title={e.title} level={e.level} img={e.img} handleCheck={Heros}/>
+                       <CardItem  id={e.id} title={e.title} level={e.level} img={e.img} handleCheck={Heros} mode={mode}/>
                        </Grid>
                   )
                 })}
@@ -280,20 +479,13 @@ export const ListerningMore = () => {
                 </Stack>
               </Box>
             ) : null}
-              <Modal
-        open={modelOpen}
-        onClose={modalHandle}
-        aria-labelledby="parent-modal-title"
-        aria-describedby="parent-modal-description"
-      >
-        <Box sx={{ ...style, width: 550 }}>
-          <CardModal clickHandle={modalHandle}/>
-         
-        </Box>
-      </Modal>
+                 {
+                   modelOpen?<CardModal/>:null
+                 }
+                  
+             
              </Box>
           
-                
           </ClickAwayListener>
   )
 }

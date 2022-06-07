@@ -79,3 +79,7 @@ button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.
 .icon_sidebar svg{
     height: 30px !important;
 }
+.MuiBox-root.css-1s9lc61 {
+    overflow: scroll;
+    max-height: 800px;
+}

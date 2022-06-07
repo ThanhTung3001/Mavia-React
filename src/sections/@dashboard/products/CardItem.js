@@ -15,7 +15,7 @@ const commonStyles = {
     position:'relative'
     
   };
-const CardItem = ({id,img,title,level,handleCheck}) => {
+const CardItem = ({id,img,title,level,handleCheck,mode=true}) => {
     // alert(img)
     const [heros,setHeros]= useState({});
     const checkHandle =(event)=>{
@@ -46,11 +46,13 @@ const CardItem = ({id,img,title,level,handleCheck}) => {
         sx={{backgroundColor:'#d3d3d6',}}
         alt="green iguana"
       />
-      <Checkbox style={{
-          position:'absolute',
-          top:'4px',
-          right:'4px'
-      }} defaultChecked={false} onChange={checkHandle} size="medium" />
+    {
+      mode?  <Checkbox style={{
+        position:'absolute',
+        top:'4px',
+        right:'4px'
+    }} defaultChecked={false} onChange={checkHandle} size="medium" />:null
+    }
       <CardContent sx={{padding:'16px ', margin:'0px'}}>
         <Typography sx={{margin:'0px'}} gutterBottom variant="h5" component="div">
           {title}

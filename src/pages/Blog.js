@@ -50,7 +50,15 @@ const bases = [{
   description: 'HQ Level 2 .Plot #1004',
   action: 'Buy it now',
   value: '2,500.50'
-}];
+}, {
+  id: 5,
+  img: '/static/mock-images/Bases/map5.jpeg',
+  title: 'Mega Fortress',
+  description: 'HQ Level 2 .Plot #1004',
+  action: 'Buy it now',
+  value: '2,500.50'
+}
+];
 const heros = [
   {
     id: 1,
