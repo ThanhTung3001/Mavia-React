@@ -25,36 +25,36 @@ import {ProductItems} from '../sections/@dashboard/products';
 const bases = [{
   id: 1,
   img: '/static/mock-images/Bases/map1.jpg',
-  title: 'Mega Fortress',
-  description: 'HQ Level 4 .Plrt #142',
+  title: 'Olympus Scenery',
+  description: 'Town Hall Level 4 .Plrt #142',
   action: 'Auction',
   value: '3,100.00'
 }, {
   id: 2,
   img: '/static/mock-images/Bases/map2.jpg',
-  title: 'Mega Fortress',
-  description: 'HQ Level 4 .Plot #645',
+  title: 'Jungle Scenery',
+  description: 'Town Hall Level 4 .Plot #645',
   action: 'Buy it now',
   value: '1,298.50'
 }, {
   id: 3,
   img: '/static/mock-images/Bases/map3.jpg',
-  title: 'Mega Fortress',
-  description: 'HQ Level 8 .Plot #1983',
+  title: ' Neda Scenery',
+  description: 'Town Hall Level 8 .Plot #1983',
   action: 'Buy it now',
   value: '6,500.50'
 }, {
   id: 4,
   img: '/static/mock-images/Bases/map4.jpg',
-  title: 'Mega Fortress',
-  description: 'HQ Level 2 .Plot #1004',
+  title: 'Hades Scenery',
+  description: 'Town Hall Level 2 .Plot #1004',
   action: 'Buy it now',
   value: '2,500.50'
 }, {
   id: 5,
   img: '/static/mock-images/Bases/map5.jpeg',
-  title: 'Mega Fortress',
-  description: 'HQ Level 2 .Plot #1004',
+  title: 'Athens Scenery',
+  description: 'Town Hall Level 2 .Plot #1004',
   action: 'Buy it now',
   value: '2,500.50'
 }
@@ -64,35 +64,35 @@ const heros = [
     id: 1,
     img: '/static/mock-images/Char/Layer 3 Large.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #142',
+    description: 'Town Hall Level 4 .Plot #142',
     action: 'Auction',
     value: '3,100.00'
   }, {
     id: 2,
     img: '/static/mock-images/Char/Layer 11 Large.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #645',
+    description: 'Town Hall Level 4 .Plot #645',
     action: 'Buy it now',
     value: '1,298.50'
   }, {
     id: 3,
     img: '/static/mock-images/Char/Layer 15 Large.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 8 .Plot #1983',
+    description: 'Town Hall Level 8 .Plot #1983',
     action: 'Buy it now',
     value: '6,500.50'
   }, {
     id: 4,
     img: '/static/mock-images/Char/Layer 19 Large.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 2 .Plot #1004',
+    description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
     value: '2,500.50'
   }, {
     id: 5,
     img: '/static/mock-images/Char/Layer 34 Large.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 2 .Plot #1004',
+    description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
   }
 ]
@@ -115,7 +115,7 @@ export default function Blog() {
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList onChange={handleChange} aria-label="lab API tabs example">
                 <Tab icon={<AccountCircle />} iconPosition="start" label="Profile" value="1" />
-                <Tab icon={<Diamond />} iconPosition="start" label="Ruby" value="2" />
+                <Tab icon={<Diamond />} iconPosition="start" label="Sapphire " value="2" />
                 <Tab icon={<Article />} iconPosition="start" label="Properties" value="3" />
                 <Tab icon={<LibraryBooks />} iconPosition="start" label="Ledger" value="4" />
                 <Tab icon={<NotificationsActive />} iconPosition="start" label="Notification" value="5" />

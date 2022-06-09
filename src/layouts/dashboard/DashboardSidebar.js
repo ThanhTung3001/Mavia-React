@@ -111,19 +111,19 @@ export default function DashboardSidebar() {
          </Stack>
         </DrawerHeader>
         <DrawerHeader sx={{paddingBottom:'5px',justifyContent:open?'start':'end'}}>
-          <Stack justifyContent={'flex-start'} direction={"row"} alignItems={"center"}  sx={{
+          <Stack justifyContent={'flex-start'} direction={"column"} alignItems={"center"}  sx={{
                     width: "100%",
                     mr: open ? 3 : 'auto',
                     justifyContent:'start',
-                    ml:'20px'
+                    ml:'0'
                     
                     
                   }}>
-          
+           <Typography sx={{ opacity: open ? 1 : 0,ml:2 }} variant='h4' color="#324f8f">Rise of Immortals</Typography>
             <img alt="Remy Sharp" src="/static/mock-images/Common/logo.png" style={{
               width:'45px'
             }} />
-            <Typography sx={{ opacity: open ? 1 : 0,ml:2 }} variant='h4' color="#324f8f">Mavia</Typography>
+           
             {/* <ListItemText primary={"Mavia "}  /> */}
           
           </Stack>

@@ -212,7 +212,7 @@ export default function User() {
                             {role}
                             </Typography>
                             <Typography variant="h7">
-                                Total RuBy Earned
+                                Total Sapphire  Earned
                             </Typography>
                           </Stack>    
                         </TableCell>

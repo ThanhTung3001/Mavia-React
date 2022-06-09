@@ -1,4 +1,6 @@
 import * as React from 'react';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import ViewListIcon from '@mui/icons-material/ViewList';
 import { List, PropaneTank, CenterFocusStrong, Support, Gamepad, FavoriteBorder, Menu, NoBackpack, Policy, Castle, Hearing, Visibility, PanoramaPhotosphere, Man, ArrowForwardIos, HealthAndSafety } from '@mui/icons-material';
 import { Grid, Container, Radio, RadioGroup, Typography, Button, InputLabel, MenuItem, FormControl, Select, FormGroup, FormControlLabel, FormLabel, Checkbox } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -8,33 +10,35 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import ProductItems from './ProductItems';
 
+
+
 const listHero = [
   {
     id: 1,
     img: '/static/mock-images/Hero/Hero1.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #142',
+    description: 'Town Hall Level 4 .Plot #142',
     action: 'Auction',
     value: '3,100.00'
   }, {
     id: 2,
     img: '/static/mock-images/Hero/Hero2.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #645',
+    description: 'Town Hall Level 4 .Plot #645',
     action: 'Buy it now',
     value: '1,298.50'
   }, {
     id: 3,
     img: '/static/mock-images/Hero/Hero3.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 8 .Plot #1983',
+    description: 'Town Hall Level 8 .Plot #1983',
     action: 'Buy it now',
     value: '6,500.50'
   }, {
     id: 4,
     img: '/static/mock-images/Hero/Hero4.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 2 .Plot #1004',
+    description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
     value: '2,500.50'
   }
@@ -43,11 +47,40 @@ const Hero = () => {
   const [age, setAge] = React.useState('');
   const [item, setItem] = React.useState({});
   const [hover, setHover] = React.useState(false);
-  const [pos, setPost] = React.useState({})
+  const [pos, setPost] = React.useState({});
+  const [price,setPrice] =React.useState(0);
+  const [viewType,setViewType]=React.useState(false);
+  const changeView =()=>{
+     setViewType(viewType=>!viewType)
+  }
 
   return (
     <Grid container direction="row" spacing={3} justifyContent={"center"} >
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
+      <Grid item xs={12}>
+       <Grid container justifyContent={"flex-end"}>
+         <Grid item lg={4}>
+         <FormControl sx={{minWidth:'150px'}}>
+        <InputLabel id="demo-simple-select-label">Lowest Price</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={price}
+          label="Lowest Price"
+          onChange={(e)=>{setPrice(e.target.value)}}>
+          <MenuItem value={0}>Default</MenuItem>
+          <MenuItem value={10}>Lowest ID</MenuItem>
+          <MenuItem value={20}>Highest ID</MenuItem>
+          <MenuItem value={30}>Lowest Price</MenuItem>
+          <MenuItem value={40}>Highest Price</MenuItem>
+          <MenuItem value={50}>Latest</MenuItem>
+        </Select>
+        </FormControl>
+        <Button size='large' sx={{margin:'3px 0px 3px 15px'}} variant={viewType?"contained":"outlined"} onClick={changeView} ><WidgetsIcon fontSize='large'/></Button>
+        <Button size='large' sx={{margin:'3px 3px 3px 0px'}} variant={viewType?"outlined":"contained"} onClick={changeView} ><ViewListIcon fontSize='large'/></Button>
+         </Grid>
+       </Grid>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={4} xl={3}>
         <Grid container spacing={1} justifyContent={"center"} >
           <Grid item xs={12} md={12}>
             <FormControl>
@@ -282,8 +315,8 @@ const Hero = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={10}>
-        <ProductItems listItems={listHero} sm={6} md={3} lg={3} />
+      <Grid item xs={12} sm={12} md={12} lg={8} xl={9}>
+        <ProductItems listItems={listHero} sm={6} md={3} lg={4} xl={3}/>
       </Grid>
     </Grid>
 

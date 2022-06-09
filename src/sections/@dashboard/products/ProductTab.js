@@ -9,7 +9,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import ProductItems from './ProductItems';
 import Hero from './Hero';
-
+import {IconRubyFirst,IconRubySecond,IconRubyThirt,IconHero}from '../../../components/iconCustom/IconSvg';
 
 
 
@@ -43,58 +43,95 @@ export default function ProductTab() {
     id: 1,
     img: '/static/mock-images/Bases/base1.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plrt #142',
+    description: 'Town Hall Level 4 .Plrt #142',
     action: 'Auction',
     value: '3,100.00'
   }, {
     id: 2,
     img: '/static/mock-images/Bases/base4.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 4 .Plot #645',
+    description: 'Town Hall Level 4 .Plot #645',
     action: 'Buy it now',
     value: '1,298.50'
   }, {
     id: 3,
     img: '/static/mock-images/Bases/base2.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 8 .Plot #1983',
+    description: 'Town Hall Level 8 .Plot #1983',
     action: 'Buy it now',
     value: '6,500.50'
   }, {
     id: 4,
     img: '/static/mock-images/Bases/base3.png',
     title: 'Mega Fortress',
-    description: 'HQ Level 2 .Plot #1004',
+    description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
     value: '2,500.50'
   }];
+  const bases = [{
+    id: 1,
+    img: '/static/mock-images/Bases/map1.jpg',
+    title: 'Olympus Scenery',
+    description: 'Town Hall Level 4 .Plrt #142',
+    action: 'Auction',
+    value: '3,100.00'
+  }, {
+    id: 2,
+    img: '/static/mock-images/Bases/map2.jpg',
+    title: 'Jungle Scenery',
+    description: 'Town Hall Level 4 .Plot #645',
+    action: 'Buy it now',
+    value: '1,298.50'
+  }, {
+    id: 3,
+    img: '/static/mock-images/Bases/map3.jpg',
+    title: ' Neda Scenery',
+    description: 'Town Hall Level 8 .Plot #1983',
+    action: 'Buy it now',
+    value: '6,500.50'
+  }, {
+    id: 4,
+    img: '/static/mock-images/Bases/map4.jpg',
+    title: 'Hades Scenery',
+    description: 'Town Hall Level 2 .Plot #1004',
+    action: 'Buy it now',
+    value: '2,500.50'
+  }, {
+    id: 5,
+    img: '/static/mock-images/Bases/map5.jpeg',
+    title: 'Athens Scenery',
+    description: 'Town Hall Level 2 .Plot #1004',
+    action: 'Buy it now',
+    value: '2,500.50'
+  }
+  ];
   const listHero = [
     {
       id: 1,
       img: '/static/mock-images/Hero/Hero1.png',
       title: 'Mega Fortress',
-      description: 'HQ Level 4 .Plot #142',
+      description: 'Town Hall Level 4 .Plot #142',
       action: 'Auction',
       value: '3,100.00'
     }, {
       id: 2,
       img: '/static/mock-images/Hero/Hero2.png',
       title: 'Mega Fortress',
-      description: 'HQ Level 4 .Plot #645',
+      description: 'Town Hall Level 4 .Plot #645',
       action: 'Buy it now',
       value: '1,298.50'
     }, {
       id: 3,
       img: '/static/mock-images/Hero/Hero3.png',
       title: 'Mega Fortress',
-      description: 'HQ Level 8 .Plot #1983',
+      description: 'Town Hall Level 8 .Plot #1983',
       action: 'Buy it now',
       value: '6,500.50'
     }, {
       id: 4,
       img: '/static/mock-images/Hero/Hero4.png',
       title: 'Mega Fortress',
-      description: 'HQ Level 2 .Plot #1004',
+      description: 'Town Hall Level 2 .Plot #1004',
       action: 'Buy it now',
       value: '2,500.50'
     }
@@ -162,7 +199,7 @@ export default function ProductTab() {
               <TabList onChange={handleChange} aria-label="lab API tabs example">
                 <Tab icon={<Menu />} iconPosition="start" label="Overview" value="1" />
                 <Tab icon={<Castle />} iconPosition="start" label="Bases" value="2" />
-                <Tab icon={<PanoramaPhotosphere />} iconPosition="start" label="Heros" value="3" />
+                <Tab icon={<IconHero width={'40px'} height={"40px"} />} iconPosition="start" label="Heros" value="3" />
                 <Tab icon={<Man />} iconPosition="start" label="Status" value="4" />
               </TabList>
             </Box>
@@ -210,12 +247,12 @@ export default function ProductTab() {
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={4}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
-                            <InputLabel id="demo-select-small">HQ Level</InputLabel>
+                            <InputLabel id="demo-select-small">Town Hall Level</InputLabel>
                             <Select
                               labelId="demo-select-small"
                               id="demo-select-small"
                               value={age}
-                              label="HQ Level"
+                              label="Town Hall Level"
                               onChange={(event) => { setAge('') }}
                             >
                               <MenuItem value={10}>Ten</MenuItem>
@@ -270,7 +307,7 @@ export default function ProductTab() {
                       </Grid>
                     </Grid>
                   </Grid>
-                  <ProductItems listItems={listItems} sm={6} md={6} lg={6} mouseHandle={onHoverItem} />
+                  <ProductItems listItems={bases} sm={12} md={12} lg={12} xl={6} mouseHandle={onHoverItem} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={7} style={{ position: 'relative' }} id="post_div">
                   {(hover === true) ? <CardHover /> : <> </>}

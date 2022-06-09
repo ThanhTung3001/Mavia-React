@@ -11,6 +11,8 @@ import { List, Menu, Castle, PanoramaPhotosphere, Man, ArrowForwardIos } from '@
 import { Link,Redirect  } from 'react-router-dom';
 import { ListerningMore } from './ListerningMore';
 
+import { IconRubyThirt } from '../../../components/iconCustom/IconSvg';
+
 const styles = {
   position: 'absolute',
   top: 28,
@@ -30,7 +32,7 @@ const styleForMore={
 const styleForStack={
   backgroundColor:'while'
 }
- const ProductItems = ({mouseHandle,md,sm,lg,listItems,mode=false}) => {
+ const ProductItems = ({mouseHandle,md,sm,lg,listItems,xl,mode=false}) => {
   const [open,setOpen]=useState(false);
   
   const handleClickAway=()=>{
@@ -44,7 +46,7 @@ const styleForStack={
     <Grid container spacing={2} justifyContent={"center"}>
      {
        (listItems.map((e,index)=>(
-        <Grid key={index} item xs={12} sm={sm} md={md} lg={lg} style={{
+        <Grid key={index} item xs={12} sm={sm} md={md} lg={lg} xl={xl} style={{
           display:'flex',
           justifyContent:'center'
         }}>
@@ -80,7 +82,7 @@ const styleForStack={
         }} >
               {e.action}
             </Typography>
-         <Button startIcon={<PanoramaPhotosphere color='primary'/>} style={{color:'black'}}>
+         <Button startIcon={<IconRubyThirt color='primary'/>} style={{color:'black'}}>
             {e.value}
          </Button>
           

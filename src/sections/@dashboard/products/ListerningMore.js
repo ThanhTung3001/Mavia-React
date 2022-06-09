@@ -49,7 +49,7 @@ const listHero = [
       id: 1,
       img: '/static/mock-images/Hero/Hero1.png',
       title: 'Hero 1',
-      description: 'HQ Level 4 .Plot #142',
+      description: 'Town Hall Level 4 .Plot #142',
       level:'Level 4',
       action: 'Auction',
       value: '3,100.00'
@@ -57,7 +57,7 @@ const listHero = [
       id: 2,
       img: '/static/mock-images/Hero/Hero2.png',
       title: 'Hero 2',
-      description: 'HQ Level 4 .Plot #645',
+      description: 'Town Hall Level 4 .Plot #645',
       level:'Level 4',
       action: 'Buy it now',
       value: '1,298.50'
@@ -65,7 +65,7 @@ const listHero = [
       id: 3,
       img: '/static/mock-images/Hero/Hero3.png',
       title: 'Hero 3',
-      description: 'HQ Level 8 .Plot #1983',
+      description: 'Town Hall Level 8 .Plot #1983',
       level:'Level 8',
       action: 'Buy it now',
       value: '6,500.50'
@@ -73,7 +73,7 @@ const listHero = [
       id: 4,
       img: '/static/mock-images/Hero/Hero4.png',
       title: 'Hero 4',
-      description: 'HQ Level 2 .Plot #1004',
+      description: 'Town Hall Level 2 .Plot #1004',
       level:'Level 2',
       action: 'Buy it now',
       value: '2,500.50'
@@ -85,7 +85,7 @@ const listStatus = [
     id: 1,
     img: '/static/mock-images/Bases/map1.jpg',
     title: 'Hero 1',
-    description: 'HQ Level 4 .Plot #142',
+    description: 'Town Hall Level 4 .Plot #142',
     level:'Level 4',
     action: 'Auction',
     value: '3,100.00'
@@ -93,7 +93,7 @@ const listStatus = [
     id: 2,
     img: '/static/mock-images/Bases/map2.jpg',
     title: 'Hero 2',
-    description: 'HQ Level 4 .Plot #645',
+    description: 'Town Hall Level 4 .Plot #645',
     level:'Level 4',
     action: 'Buy it now',
     value: '1,298.50'
@@ -101,7 +101,7 @@ const listStatus = [
     id: 3,
     img: '/static/mock-images/Bases/map3.jpg',
     title: 'Hero 3',
-    description: 'HQ Level 8 .Plot #1983',
+    description: 'Town Hall Level 8 .Plot #1983',
     level:'Level 8',
     action: 'Buy it now',
     value: '6,500.50'
@@ -109,7 +109,7 @@ const listStatus = [
     id: 4,
     img: '/static/mock-images/Bases/map4.jpg',
     title: 'Hero 4',
-    description: 'HQ Level 2 .Plot #1004',
+    description: 'Town Hall Level 2 .Plot #1004',
     level:'Level 2',
     action: 'Buy it now',
     value: '2,500.50'
@@ -224,7 +224,7 @@ const FinishModal =({heroes,statuses,yourRuby,ruby})=>{
           <Grid sm={3} justifyContent={"center"} style={{display:'flex'}} textAlign={"center"} alignItems={"center"}>
               <Stack  >
                  <Typography variant='h5'>Cryptonomo</Typography>
-                 <Typography variant='body2'>HQ Level 6</Typography>
+                 <Typography variant='body2'>Town Hall Level 6</Typography>
               </Stack>
           </Grid>
     </Grid>
@@ -285,7 +285,7 @@ const SecondModal=()=>{
 
         <Stack direction={"row"} justifyContent={"space-between"} paddingTop={5} spacing={2}>
         <FormControl fullWidth >
-            <InputLabel id="demo-simple-select-label">Your RUBY Share</InputLabel>
+            <InputLabel id="demo-simple-select-label">Your Sapphire Share</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -295,15 +295,15 @@ const SecondModal=()=>{
                   setYourRuby(e.target.value)
                 }}
             >
-                <MenuItem value={10}>10% RUBY Earnings</MenuItem>
-                <MenuItem value={20}>20% RUBY Earnings</MenuItem>
-                <MenuItem value={30}>30% RUBY Earnings</MenuItem>
+                <MenuItem value={10}>10% Sapphire Earnings</MenuItem>
+                <MenuItem value={20}>20% Sapphire Earnings</MenuItem>
+                <MenuItem value={30}>30% Sapphire Earnings</MenuItem>
             </Select>
             </FormControl>
             
             <FormControl fullWidth >
                 
-            <InputLabel id="demo-simple-select-label">Partner RUBY Share</InputLabel>
+            <InputLabel id="demo-simple-select-label">Partner Sapphire Share</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -311,9 +311,9 @@ const SecondModal=()=>{
                 label="Your Ruby Split"
                 onChange={handleChange}
             >
-                <MenuItem value={10}>10% RUBY Earnings</MenuItem>
-                <MenuItem value={20}>20% RUBY Earnings</MenuItem>
-                <MenuItem value={30}>30% RUBY Earnings</MenuItem>
+                <MenuItem value={10}>10% Sapphire Earnings</MenuItem>
+                <MenuItem value={20}>20% Sapphire Earnings</MenuItem>
+                <MenuItem value={30}>30% Sapphire Earnings</MenuItem>
             </Select>
             </FormControl>
 
