@@ -47,7 +47,18 @@ const navConfig = [
     title: 'My Account',
     path: '/dashboard/blog',
     icon: <AccountCircleIcon/>,
-    haveSubNav:false
+    haveSubNav:true,
+    subList:[
+      {
+        title:"Dashboard",
+        path:"/dashboard",
+        icon:<DashboardIcon/>
+      },{
+         title:"Market",
+         path:"/dasboard/market",
+         icon:<LocalGroceryStoreIcon/>
+      }
+    ]
   },
 ];
 

@@ -56,7 +56,7 @@ const styleForStack={
             component="img"
              style={{
                backgroundColor:'#d3d3d6',
-               width:'100%'
+               height:'250px'
              }}
             height="194"
             image={e.img}

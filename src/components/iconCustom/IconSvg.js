@@ -8,10 +8,10 @@ export const IconRubyFirst = (props) => {
     </Box>
   )
 }
-export const IconRubySecond =()=>{
+export const IconRubySecond =({style})=>{
  return(
     <Box>
-    <img style={{width:'20px',height:'20px'}} src="/static/mock-images/Common/ruby2.png" alt="" />
+    <img style={style} src="/static/mock-images/Common/ruby2.png" alt="" />
 </Box>
  )
 }

@@ -63,9 +63,9 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
-           <Button variant='outlined' startIcon={<IconRubyFirst fontSize='small' color='primary'/>}>115,200.46</Button>
-           <Button variant='outlined' startIcon={<IconRubySecond fontSize='small' color='error'/>}>451,234.36</Button>
-           <Button variant='outlined' startIcon={<IconRubyThirt fontSize='small'/>}>212,234.43</Button>
+           <Button variant='outlined' startIcon={<IconRubyFirst fontSize='small' color='primary'/>}>85,317.46</Button>
+           <Button variant='outlined' startIcon={<IconRubySecond style={{width:'20px',height:'20px'}}/>}>58,294.12</Button>
+           <Button variant='outlined' startIcon={<IconRubyThirt fontSize='small'/>}>113,249.43</Button>
            <Button variant='outlined'  ><ModeNight fontSize='small' color='inherit' style={{
              color:'black'
            }}/></Button>
@@ -75,7 +75,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
            }}/>
             </Button>
            <ButtonGroup disableElevation variant="contained">
-            <Button startIcon={<IconRubyThirt fontSize='small'/>} style={{color:'#000'}}>0,0747ETH</Button>
+            <Button startIcon={<IconRubyThirt fontSize='small'/>} style={{color:'#000'}}>0,1247ETH</Button>
             <Button disabled id="button_token" >{processToken(guid.raw())}</Button>
           </ButtonGroup>
         </Stack>

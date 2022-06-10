@@ -60,40 +60,76 @@ const bases = [{
 }
 ];
 const heros = [
-  {
-    id: 1,
-    img: '/static/mock-images/Char/Layer 3 Large.png',
-    title: 'Mega Fortress',
-    description: 'Town Hall Level 4 .Plot #142',
-    action: 'Auction',
-    value: '3,100.00'
-  }, {
+ {
     id: 2,
     img: '/static/mock-images/Char/Layer 11 Large.png',
-    title: 'Mega Fortress',
+    title: 'Hades',
     description: 'Town Hall Level 4 .Plot #645',
     action: 'Buy it now',
     value: '1,298.50'
   }, {
     id: 3,
     img: '/static/mock-images/Char/Layer 15 Large.png',
-    title: 'Mega Fortress',
+    title: 'Thanatos',
     description: 'Town Hall Level 8 .Plot #1983',
     action: 'Buy it now',
     value: '6,500.50'
   }, {
     id: 4,
     img: '/static/mock-images/Char/Layer 19 Large.png',
-    title: 'Mega Fortress',
+    title: 'Phobos',
     description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
     value: '2,500.50'
   }, {
     id: 5,
     img: '/static/mock-images/Char/Layer 34 Large.png',
-    title: 'Mega Fortress',
+    title: 'Ares',
     description: 'Town Hall Level 2 .Plot #1004',
     action: 'Buy it now',
+    value:"1,4411.99"
+  }, {
+    id: 6,
+    img: '/static/mock-images/Char/Layer 38 Large.png',
+    title: 'Perseus',
+    description: 'Town Hall Level 3 .Plot #1224',
+    action: 'Buy it now',
+    value:"1,777.99"
+  }, {
+    id: 7,
+    img: '/static/mock-images/Char/Layer 42 Large.png',
+    title: 'Helios',
+    description: 'Town Hall Level 3 .Plot #1224',
+    action: 'Buy it now',
+    value:"1,777.99"
+  },{
+    id:8,
+    img:'/static/mock-images/Char/Layer 30 Large.png',
+    title:'Ganymede',
+    description:'Town Hall Level 5 .Plot #1429',
+    action:'Aution',
+    value:'9,772.00'
+  },{
+    id:9,
+    img:'/static/mock-images/Char/Layer 50 Large.png',
+    title:'Zeus',
+    description:'Town Hall Level 1 .Plot #1329',
+    action:'Aution',
+    value:'8,072.00'
+  },{
+    id:10,
+    img:'/static/mock-images/Char/Layer 26 Large.png',
+    title:'Nemesis',
+    description:'Town Hall Level 8 .Plot #1421',
+    action:'Aution',
+    value:'6,192.00'
+  },{
+    id:11,
+    img:'/static/mock-images/Char/Layer 7 Large.png',
+    title:'Poseidon',
+    description:'Town Hall Level 6 .Plot #1422',
+    action:'Aution',
+    value:'6,062.00'
   }
 ]
 

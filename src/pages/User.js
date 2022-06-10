@@ -31,6 +31,7 @@ import Scrollbar from '../components/Scrollbar';
 import Iconify from '../components/Iconify';
 import SearchNotFound from '../components/SearchNotFound';
 import { UserListHead, UserListToolbar, UserMoreMenu } from '../sections/@dashboard/user';
+import {IconRubyFirst,IconRubySecond,IconRubyThirt}from '../components/iconCustom/IconSvg';
 // mock
 import USERLIST from '../_mock/user';
 
@@ -207,9 +208,10 @@ export default function User() {
                         </TableCell>
                         <TableCell align="left">
                         <Stack direction='column'>
-                            <Typography variant="h6">
-                               <Diamond fontSize='small' color='error'/>
-                            {role}
+                            <Typography variant="h6" component={"span"} >
+                              
+                               <Button startIcon={ <IconRubySecond style={{width:'20px',height:'20px'}} />} color='inherit'> {role}</Button>
+                             
                             </Typography>
                             <Typography variant="h7">
                                 Total Sapphire  Earned

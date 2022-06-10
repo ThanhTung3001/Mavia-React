@@ -147,7 +147,7 @@ export default function DashboardSidebar() {
                   px: 2.5,
                 }}
               >
-                <ListItemIcon
+                <ListItemIcon 
                   sx={{
                     minWidth: 0,
                     mr: open ? 3 : 'auto',
