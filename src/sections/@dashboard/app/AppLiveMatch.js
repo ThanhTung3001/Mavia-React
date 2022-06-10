@@ -5,7 +5,8 @@ import CardMedia from '@mui/material/CardMedia';
 import { Grid, Container, Typography, CardActionArea, Avatar, Stack } from '@mui/material';
 import { display, fontSize } from '@mui/system';
 
-export default function AppLiveMatch() {
+export default function AppLiveMatch({data}) {
+    console.log(data)
     return (<>
 
         <Card variant="outlined" 
@@ -25,23 +26,23 @@ export default function AppLiveMatch() {
                 <CardMedia
                     component="img"
                     height="150"
-                    image="/static/mock-images/Matchs/MatchLive1.png"
+                    image={data.map}
                     alt="green iguana"
                 />
                 <CardContent style={{ padding: 5 }} >
                     <Typography gutterBottom variant="h5" component="div" textAlign={"start"}>
-                        Lizard
+                        {data.matchName}
                     </Typography>
                     <Stack direction="row" spacing={1} justifyContent={"space-between"}>
                         <Grid item xs={6}  >
 
                            <Typography gutterBottom variant="h7" style={{ display: 'flex' }} component="span">
-                                <Avatar alt="Remy Sharp" m={0} src="https://mui.com/static/images/avatar/1.jpg" />
+                                <Avatar alt="Remy Sharp" m={0} src={data.img1} />
                                 <Typography gutterBottom component="h8" style={{
                                     fontWeight: '600', fontSize: '15px', display: 'flex',
                                     'flex-direction': 'column'
                                 }} ml={0.5} >
-                                    Lizad
+                                    {data.user1}
                                     <Typography style={{ fontSize: '12px' }} component="h12">{" Attacker"}</Typography>
                                 </Typography>
 
@@ -52,12 +53,12 @@ export default function AppLiveMatch() {
                         <Grid item xs={6}  >
 
                             <Typography gutterBottom variant="h7" style={{ display: 'flex' }} component="span">
-                                <Avatar alt="Remy Sharp" m={0} src="https://mui.com/static/images/avatar/1.jpg" />
+                                <Avatar alt="Remy Sharp" m={0} src={data.img2} />
                                 <Typography gutterBottom component="h8" style={{
                                     fontWeight: '600', fontSize: '15px', display: 'flex',
                                     'flex-direction': 'column'
                                 }} ml={0.5} >
-                                    Lizad
+                                    {data.user2}
                                     <Typography style={{ fontSize: '12px' }} component="h12">{" Attacker"}</Typography>
                                 </Typography>
 

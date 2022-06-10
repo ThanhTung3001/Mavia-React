@@ -209,10 +209,10 @@ export default function ProductTab() {
             <TabPanel value="2">
               <Grid container spacing={3} justifyContent={"center"} >
                 <Grid item xs={12} sm={12} md={5}>
-                  <Grid container spacing={1} justifyContent={"center"} >
+                  <Grid container spacing={1} justifyContent={"space-between"} >
                     <Grid item xs={12} sm={12} ld={12}>
-                      <Grid container>
-                        <Grid item xs={12} sm={12} md={12} lg={4}>
+                      <Grid container justifyContent={"space-between"}>
+                        <Grid item xs={12} sm={12} md={12} lg={3} m={1}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">Sale Type</InputLabel>
                             <Select
@@ -229,7 +229,7 @@ export default function ProductTab() {
                             </Select>
                           </FormControl>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={4}>
+                        <Grid item xs={12} sm={12} md={12} lg={3} m={1}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">Price Range</InputLabel>
                             <Select
@@ -245,7 +245,7 @@ export default function ProductTab() {
                             </Select>
                           </FormControl>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={4}>
+                        <Grid item xs={12} sm={12} md={12} lg={3} m={1}>
                           <FormControl sx={{ m: 1, minWidth: 130, width: '100%' }} size="small">
                             <InputLabel id="demo-select-small">Town Hall Level</InputLabel>
                             <Select

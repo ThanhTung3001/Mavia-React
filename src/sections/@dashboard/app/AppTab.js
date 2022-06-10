@@ -70,7 +70,7 @@ export default function AppTab({ListItems,index,handleChange,ListTag}) {
             <ListItemText
               primary={
                 <>
-                   <Typography variant="h7" >
+                   <Typography variant="h6" component={"span"} >
                           {e.title}
                       </Typography>
          

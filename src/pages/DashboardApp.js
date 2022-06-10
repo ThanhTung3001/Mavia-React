@@ -43,26 +43,43 @@ const ListItems = [
   {
     title: 'ACTIVE PLAYERS',
     unit: '4,0554',
-    avatar: 'https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg'
+    avatar: '/static/mock-images/avatars/avatar_1.jpg'
   },
   {
-    title: 'ACTIVE PLAYERS',
-    unit: '4,0553',
-    avatar: 'https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg'
+    title: 'TOTAL MATCHES',
+    unit: '102,022',
+    avatar: '/static/mock-images/avatars/avatar_9.jpg'
   },
   {
-    title: 'ACTIVE PLAYERS',
-    unit: '4,0554',
-    avatar: 'https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg'
+    title: 'TOTAL SHAPPHIRE ',
+    unit: '411,0554',
+    avatar: '/static/mock-images/avatars/avatar_2.jpg'
   }, {
-    title: 'ACTIVE PLAYERS',
-    unit: '4,0554',
-    avatar: 'https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg'
+    title: 'SHAPPHIRE SPENDING ',
+    unit: '554,0554',
+    avatar: '/static/mock-images/avatars/avatar_3.jpg'
   }
 ]
+const randomMatchs =(index)=>{
+    const randomMap = (Math.round(Math.random()*4)+1);
+    const randomAvatar = Math.round(Math.random()*40)+1;
+    const randomAvatar2= Math.round(Math.random()*40)+1;
+    const randomName = Math.round(Math.random()*30)+1;
+  return {
+      user1:`User ${index+1}`,
+      user2:`User ${randomName}`,
+      img1:`/static/mock-images/avatars/avatar_${randomAvatar}.jpg`,
+      img2:`/static/mock-images/avatars/avatar_${randomAvatar2}.jpg`,
+      map:`/static/mock-images/Bases/map${randomMap>=5?4:randomMap}.jpg`,
+      matchName:`Match ${index+1}`
+  }
+}
+const Matches = [...Array(8)].map((_,index)=>{
+  return randomMatchs(index);
+})
 const ListTag = [
   {
-    name: 'Last 24h'
+    name: 'Last 24h',
   }, {
     name: ' 7 Days'
   }, {
@@ -164,63 +181,71 @@ export default function DashboardApp() {
                       </Typography>
                     </Grid>
                     {/* LiveMatches */}
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
-                      <AppLiveMatch />
+                    <Grid item xs={12}>
+                      <Grid container justifyContent={"center"}>
+                        {
+                          Matches.map(e=>{
+                            return (
+                            <Grid item xs={12} sm={6} md={3} paddingBottom={5}  >
+                            <AppLiveMatch data={e} />
+                            </Grid>
+                            )
+                          })
+                        }
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
-                      <AppLiveMatch />
-                    </Grid>
+                   
                       {/* Past Matches */}
                     <Grid item xs={12} sm={12} md={12} justifyContent={"center"} >
                       <Typography variant="h5" sx={{ mb: 1 }}>
                         Past Matches
                       </Typography>
+                      <Grid item xs={12}>
+                      <Grid container justifyContent={"center"}>
+                        {
+                          Matches.map(e=>{
+                            return (
+                            <Grid item xs={12} sm={6} md={3} paddingBottom={5}  >
+                            <AppLiveMatch data={e} />
+                            </Grid>
+                            )
+                          })
+                        }
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"center"} >
-                      <AppLiveMatch />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
+           
                       <Grid item xs={12} sm={12} md={12} justifyContent={"space-between"} >
                       <Typography variant="h5" sx={{ mb: 1 }}>
                       Top Bases
                       </Typography>
+                      <Grid item xs={12}>
+                      <Grid container justifyContent={"center"}>
+                        {
+                          Matches.map(e=>{
+                            return (
+                            <Grid item xs={12} sm={6} md={3} paddingBottom={5}  >
+                            <AppLiveMatch data={e} />
+                            </Grid>
+                            )
+                          })
+                        }
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3} justifyContent={"space-between"} >
-                      <AppLiveMatch />
-                    </Grid>
+                    
                   </Grid>
 
                   <Grid item xs={12} md={2} sm={12} container>
 
                     <Grid item xs={12} maxHeight={1000}>
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
+                      {
+                        Matches.map((e,index)=>(
+                          <AppTrending avatar={e.img1} username={e.user1} winsday={Math.round(Math.random()*index)+1} level={Math.round(Math.random()*100)+1} />
+                        ))
+                      }
+                     
+                      
                     <Grid xs={12}>
                     <Button fullWidth  color='secondary' sx={{ m: 2 }} style={{
                       color:'#343a40',
@@ -231,18 +256,15 @@ export default function DashboardApp() {
                             All Players
                           </Button>
                     </Grid>
-                    </Grid>
-                    <Grid item xs={12}  justifyContent={"space-between"} >
-                      <Typography variant="h5" sx={{ m: 1 }}>
+                    <Grid item xs={12} >
+                       <Typography variant="h5" sx={{ mt:1 }}>
                       Trending Bases
                       </Typography>
-                    </Grid>
-                    <Grid item xs={12} maxHeight={1000}>
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
-                      <AppTrending avatar={"https://image.thanhnien.vn/w2048/Uploaded/2022/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg"} username={"Username 123"} winsday={20} level={100} />
+                      {
+                         Matches.map((e,index)=>(
+                          <AppTrending avatar={e.img1} username={e.user2} winsday={Math.round(Math.random()*index)+1} level={Math.round(Math.random()*100)+1} />
+                        ))
+                      }
                       <Button fullWidth  color='secondary' sx={{ m: 2 }} style={{
                       color:'#343a40',
                       background:'#6c757',
@@ -252,6 +274,9 @@ export default function DashboardApp() {
                             All Bases
                           </Button>
                     </Grid>
+                    </Grid>
+                   
+                   
                   </Grid>
                 </Grid>
 
