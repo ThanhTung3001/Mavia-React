@@ -181,7 +181,7 @@ export default function User() {
                         <TableCell component="th" scope="row" padding="none">
                           <Stack direction="row" alignItems="center" spacing={2}>
                             
-                            <Avatar alt={name} src={avatarUrl} />
+                            <Avatar sx={{    marginLeft: '20px'}} alt={name} src={avatarUrl} />
                             <Stack direction="column" alignItems='center' >
                             <Typography variant="h6" noWrap>
                           

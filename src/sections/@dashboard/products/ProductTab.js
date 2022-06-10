@@ -318,7 +318,7 @@ export default function ProductTab() {
                     }}
                     width='100%'
                     height='830px'
-                    src='/static/mock-images/Matchs/map.jpg'
+                    src='/static/mock-images/Matchs/Map.jpg'
                     alt='Map Game'
                   />
                 </Grid>
